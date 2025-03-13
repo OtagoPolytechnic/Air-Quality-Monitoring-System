@@ -1,27 +1,3 @@
-/*
-  RadioLib LoRaWAN ABP Example
-
-  This example joins a LoRaWAN network and will send
-  uplink packets. Before you start, you will have to
-  register your device at https://www.thethingsnetwork.org/
-  After your device is registered, you can run this example.
-  The device will join the network and start uploading data.
-
-  Running this examples REQUIRES you to check "Resets DevNonces"
-  on your LoRaWAN dashboard. Refer to the network's
-  documentation on how to do this.
-
-  For default module settings, see the wiki page
-  https://github.com/jgromes/RadioLib/wiki/Default-configuration
-
-  For full API reference, see the GitHub Pages
-  https://jgromes.github.io/RadioLib/
-
-  For LoRaWAN details, see the wiki page
-  https://github.com/jgromes/RadioLib/wiki/LoRaWAN
-
-*/
-
 #include <RadioLib.h>
 #include "LoRaBoards.h"
 
@@ -37,13 +13,13 @@ SX1276 radio = new Module(RADIO_CS_PIN, RADIO_DIO0_PIN, RADIO_RST_PIN, RADIO_DIO
 
 
 #ifndef RADIOLIB_LORAWAN_DEV_EUI   // Replace with your Device EUI
-#define RADIOLIB_LORAWAN_DEV_EUI   0x// Paste Dev EUI Here
+#define RADIOLIB_LORAWAN_DEV_EUI   0x70B3D57ED006EBB1
 #endif
-#ifndef RADIOLIB_LORAWAN_APP_KEY   // Replace with your App Key 
-#define RADIOLIB_LORAWAN_APP_KEY   // Paste App key here eg 0x00, 0x00
+#ifndef RADIOLIB_LORAWAN_APP_KEY   
+#define RADIOLIB_LORAWAN_APP_KEY   0x7D, 0xFC, 0x2E, 0x1E, 0x29, 0xC3, 0x6F, 0x39, 0x8D, 0x55, 0x6C, 0x01, 0x30, 0x4A, 0xD7, 0x3F
 #endif
 #ifndef RADIOLIB_LORAWAN_NWK_KEY   
-#define RADIOLIB_LORAWAN_NWK_KEY   // Paste NwK key here eg 0x00, 0x00
+#define RADIOLIB_LORAWAN_NWK_KEY   0x12, 0x42, 0x8B, 0xF0, 0x8F, 0xA4, 0x17, 0x6E, 0x08, 0xA7, 0x24, 0x2D, 0x33, 0xE5, 0x50, 0x1A
 #endif
 
 // Sends every 5 minutes?
@@ -116,6 +92,8 @@ void setup()
         uint8_t buffer[RADIOLIB_LORAWAN_NONCES_BUF_SIZE];                                       // create somewhere to store nonces
         store.getBytes("nonces", buffer, RADIOLIB_LORAWAN_NONCES_BUF_SIZE); // get them from the store
         state = node.setBufferNonces(buffer);                                                           // send them to LoRaWAN
+        Serial.println(store.getBytes("nonces", buffer, RADIOLIB_LORAWAN_NONCES_BUF_SIZE));
+
         debug(state != RADIOLIB_ERR_NONE, F("Restoring nonces buffer failed"), state, false);
 
         // recall session from RTC deep-sleep preserved variable
@@ -140,7 +118,7 @@ void setup()
     }
 
     // trying to join
-    uint32_t sleepForSeconds = 60*1000;
+    uint32_t sleepForSeconds = 10*1000;
     state = RADIOLIB_ERR_NETWORK_NOT_JOINED;
 
     while (state != RADIOLIB_LORAWAN_NEW_SESSION) {
@@ -155,7 +133,8 @@ void setup()
         uint8_t *persist = node.getBufferNonces();                  // get pointer to nonces
         memcpy(buffer, persist, RADIOLIB_LORAWAN_NONCES_BUF_SIZE);  // copy in to buffer
         store.putBytes("nonces", buffer, RADIOLIB_LORAWAN_NONCES_BUF_SIZE); // send them to the store
-        
+        Serial.println(store.getBytes("nonces", buffer, RADIOLIB_LORAWAN_NONCES_BUF_SIZE));
+
         if (state != RADIOLIB_LORAWAN_NEW_SESSION) {
             Serial.print(F("Join failed: "));
             Serial.println(state);
@@ -168,7 +147,7 @@ void setup()
             Serial.print(F("Boots since unsuccessful join: "));
             // Serial.println(bootCountSinceUnsuccessfulJoin);
             Serial.print(F("Retrying join in "));
-            Serial.print("60");
+            Serial.print("10");
             Serial.println(F(" seconds"));
 
             delay(sleepForSeconds);

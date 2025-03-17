@@ -1,0 +1,64 @@
+Sources Used
+------------
+Product: https://lilygo.cc/products/lora3?variant=42729897492661
+
+Pin Map: https://docs.nordicsemi.com/bundle/ncs-latest/page/zephyr/boards/lilygo/ttgo_lora32/doc/index.html
+
+ESP32-PICO series datasheet: https://www.espressif.com/sites/default/files/documentation/esp32-pico_series_datasheet_en.pdf
+
+Paxcounter Testing Repo: https://github.com/cyberman54/ESP32-Paxcounter
+
+TTN Device & Code Setup: https://www.thethingsindustries.com/docs/hardware/devices/models/lilygo-lora32/
+
+RadioLib: https://github.com/jgromes/RadioLib/wiki/LoRaWAN
+
+RadioBoards DB of pinouts for radio module boards: https://components.espressif.com/components/jgromes/radioboards/versions/0.0.1?language=en 
+(LilyGo v1.6.1 not included)
+
+TTN Best Practices: https://www.thethingsindustries.com/docs/hardware/devices/concepts/best-practices/
+
+OTAA Activation: https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/
+
+If DevNonce too small error: https://community.st.com/t5/stm32-mcus-wireless/devnonce-is-too-small/td-p/612970
+
+RadioLib status codes: https://jgromes.github.io/RadioLib/group__status__codes.html
+
+LoRaWAN 1.0.4 onwards needs persistence to flash: https://github.com/radiolib-org/radiolib-persistence/blob/main/examples/LoRaWAN_ESP32/LoRaWAN_ESP32.ino
+
+Device Join Issues: https://www.thethingsnetwork.org/forum/t/help-device-wont-join/49323/2
+
+Set up steps:
+
+1. Clone https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series.git
+2. Run IDE as admin
+3. Install XPowersLib, U8g2, LoRa (By Sandeep Mistry), and esp32 libraries
+4. Add keys to config ?
+
+
+New steps:
+
+1. Plug in board and press reset button.
+2. Run IDE as admin
+3. Open File -> Preferences, then click the icon next to the "Additional Boards Manager URLs" section and pase the following: https://espressif.github.io/arduino-esp32/package_esp32_index.json
+4. Click "Ok" twice
+5. Click the COM port you're using and edit -> Select 'TTGO LoRa32-OLED' + Your COM port -> Ok
+6. Install XPowersLib, U8g2, RadioLib, and esp32 libraries 
+7. Open LoRaWAN_Reference
+8. Open config.h tab
+9. Edit the TTN keys and region info (Lines 24-42, subBand = 2)
+10. Update the line near the top declaring the radio variable. If using the LilyGo T3 V1.6.1, you can update it with the following:
+```
+SX1276 radio = new Module(18, 26, 23, 33);
+```
+11. In TTN, go to Applications -> CO2 Sensors -> End Devices -> [Your sensor name here] -> General Settings -> Join Settings, and click "Reset Used DevNonces"
+12. Go to "Live Data"
+13. Upload to the board. This will take a while to finish uploading. Watch the Live Data tab to see your device join the network.
+14. Open Serial Monitor in IDE to see the connection process and monitor any errors. Refer to https://jgromes.github.io/RadioLib/group__status__codes.html for any errors that come up.
+Give it 2 tries to first join. Will join successfully on second try.
+
+
+Did:
+- Added 1.6.1 pinout
+- Adjusted config to work for 1.6.1
+- Changed interval times and join delay
+- Added EEPROM storage functionality (used for lorawan 1.0.4 onwards)

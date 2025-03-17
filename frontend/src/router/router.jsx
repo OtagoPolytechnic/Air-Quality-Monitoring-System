@@ -3,7 +3,6 @@ import { Layout } from "../Component/Layout/Layout";
 import { routes } from "./routeList";
 
 const AppLayout = () => {
-  console.log("Rendering AppLayout");
   return (
     <>
       <Layout />
@@ -28,6 +27,5 @@ const routerConfig = [
 
 const router = createBrowserRouter(routerConfig);
 
-console.log("Router configuration initialized:", routerConfig);
 
 export default router;

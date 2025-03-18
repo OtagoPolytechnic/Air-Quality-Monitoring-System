@@ -44,7 +44,7 @@ const FirestoreAuthProvider = ({ children }) => {
 
           if (userDoc.exists()) {
             const userData = userDoc.data();
-            setUser({ uid: firebaseUser.uid, isAdmin: userData.role === "admin" });
+            setUser({ uid: firebaseUser.uid, isAdmin: userData.role === "admin" || userData.role ==="super_admin" });
           } else {
             setUser({ uid: firebaseUser.uid, isAdmin: false });
           }

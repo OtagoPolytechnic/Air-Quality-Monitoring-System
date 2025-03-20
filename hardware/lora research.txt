@@ -1,5 +1,3 @@
-Sources Used
-------------
 Product: https://lilygo.cc/products/lora3?variant=42729897492661
 
 Pin Map: https://docs.nordicsemi.com/bundle/ncs-latest/page/zephyr/boards/lilygo/ttgo_lora32/doc/index.html
@@ -41,9 +39,9 @@ New steps:
 2. Run IDE as admin
 3. Open File -> Preferences, then click the icon next to the "Additional Boards Manager URLs" section and pase the following: https://espressif.github.io/arduino-esp32/package_esp32_index.json
 4. Click "Ok" twice
-5. Click the COM port you're using and edit -> Select 'TTGO LoRa32-OLED' + Your COM port -> Ok
+5. Click Tools -> Board Revision -> Select your board
 6. Install XPowersLib, U8g2, RadioLib, and esp32 libraries 
-7. Open LoRaWAN_Reference
+7. Open Examples -> RadioLib -> LoRaWAN -> LoRaWAN_Reference
 8. Open config.h tab
 9. Edit the TTN keys and region info (Lines 24-42, subBand = 2)
 10. Update the line near the top declaring the radio variable. If using the LilyGo T3 V1.6.1, you can update it with the following:
@@ -54,11 +52,12 @@ SX1276 radio = new Module(18, 26, 23, 33);
 12. Go to "Live Data"
 13. Upload to the board. This will take a while to finish uploading. Watch the Live Data tab to see your device join the network.
 14. Open Serial Monitor in IDE to see the connection process and monitor any errors. Refer to https://jgromes.github.io/RadioLib/group__status__codes.html for any errors that come up.
-Give it 2 tries to first join. Will join successfully on second try.
 
 
 Did:
-- Added 1.6.1 pinout
-- Adjusted config to work for 1.6.1
-- Changed interval times and join delay
 - Added EEPROM storage functionality (used for lorawan 1.0.4 onwards)
+
+
+Trying:
+- Change device network settings to match settings mentioned here: https://github.com/OtagoPolytechnic/Cloudy-with-a-Chance-of-LoRa/wiki/CO2-Requirements#code-for-co2
+- Ensure that Network Settings > Advanced MAC settings frame counter is ticked.

@@ -17,10 +17,11 @@ unsigned long getDataTimer = 0;
 
 void setup()
 {
-    Serial.begin(9600, SERIAL_8N1, RX_PIN, TX_PIN);                                     // Device to serial monitor feedback
+    Serial2.begin(9600, SERIAL_8N1, RX_PIN, TX_PIN);                                     // Device to serial monitor feedback
+    Serial.begin(115200);
 
     mySerial.begin(BAUDRATE, SERIAL_8N1, RX_PIN, TX_PIN);                               // (Uno example) device to MH-Z19 serial start
-    myMHZ19.begin(mySerial);                                // *Serial(Stream) reference must be passed to library begin().
+    myMHZ19.begin(Serial2);                                // *Serial(Stream) reference must be passed to library begin().
 
     myMHZ19.autoCalibration();                              // Turn auto calibration ON (OFF autoCalibration(false))
     myMHZ19.printCommunication();
@@ -29,9 +30,10 @@ void setup()
 
 void loop()
 {
-  Serial.println("Entered Loop");
+  Serial.println("Entered Loop.\nAvailable bytes for receiving: " + Serial2.available());
   myMHZ19.printCommunication();
-    if (millis() - getDataTimer >= 2000)
+  Serial.println("Available bytes for writing for transmission: " + Serial2.availableForWrite());
+    if (Serial2.peek() != -1 && (millis() - getDataTimer >= 2000))
     {
         int CO2;
 
@@ -51,4 +53,5 @@ void loop()
 
         getDataTimer = millis();
     }
+    delay(200);
 }

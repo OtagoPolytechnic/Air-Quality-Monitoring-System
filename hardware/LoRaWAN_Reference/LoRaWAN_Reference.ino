@@ -1,33 +1,3 @@
-/*
-  RadioLib LoRaWAN End Device Reference Example
-
-  This example joins a LoRaWAN network and will send
-  uplink packets. Before you start, you will have to
-  register your device at https://www.thethingsnetwork.org/
-  After your device is registered, you can run this example.
-  The device will join the network and start uploading data.
-
-  Also, most of the possible and available functions are
-  shown here for reference.
-
-  LoRaWAN v1.0.4/v1.1 requires the use of EEPROM (persistent storage).
-  Running this examples REQUIRES you to check "Resets DevNonces"
-  on your LoRaWAN dashboard. Refer to the notes or the 
-  network's documentation on how to do this.
-  To comply with LoRaWAN's persistent storage, refer to
-  https://github.com/radiolib-org/radiolib-persistence
-
-  For default module settings, see the wiki page
-  https://github.com/jgromes/RadioLib/wiki/Default-configuration
-
-  For full API reference, see the GitHub Pages
-  https://jgromes.github.io/RadioLib/
-
-  For LoRaWAN details, see the wiki page
-  https://github.com/jgromes/RadioLib/wiki/LoRaWAN
-
-*/
-
 #include "config.h"
 
 // include the library

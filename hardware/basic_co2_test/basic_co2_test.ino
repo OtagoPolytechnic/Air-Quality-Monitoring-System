@@ -24,8 +24,10 @@ void setup()
 
     myMHZ19.autoCalibration(false);                              // Turn auto calibration ON (OFF autoCalibration(false))
     Serial.println("End Setup");
+    myMHZ19.recoveryReset();
     delay(300000);
     myMHZ19.calibrate();
+    myMHZ19.getRange();
 }
 
 void loop()
@@ -38,7 +40,7 @@ void loop()
         if below background CO2 levels or above range (useful to validate sensor). You can use the
         usual documented command with getCO2(false) */
 
-        CO2 = myMHZ19.getCO2();                             // Request CO2 (as ppm)
+        CO2 = myMHZ19.getCO2(false,false);                             // Request CO2 (as ppm)
 
         Serial.print("CO2 (ppm): ");
         Serial.println(CO2);

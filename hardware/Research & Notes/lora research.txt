@@ -25,6 +25,10 @@ LoRaWAN 1.0.4 onwards needs persistence to flash: https://github.com/radiolib-or
 
 Device Join Issues: https://www.thethingsnetwork.org/forum/t/help-device-wont-join/49323/2
 
+Correct pinout ? Check this link: https://forum.arduino.cc/t/liligo-esp32-lora-t3-v1-6-1-pinout-trouble/1120416
+
+RadioLib Module() reference: https://jgromes.github.io/RadioLib/class_module.html
+
 Set up steps:
 
 1. Clone https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series.git
@@ -58,6 +62,7 @@ Did:
 - Added EEPROM storage functionality (used for lorawan 1.0.4 onwards)
 
 
-Trying:
-- Change device network settings to match settings mentioned here: https://github.com/OtagoPolytechnic/Cloudy-with-a-Chance-of-LoRa/wiki/CO2-Requirements#code-for-co2
-- Ensure that Network Settings > Advanced MAC settings frame counter is ticked.
+Next steps for fixing CO2 MHZ19B:
+- Check out https://forum.arduino.cc/t/liligo-esp32-lora-t3-v1-6-1-pinout-trouble/1120416 to ensure pins are configured correctly and fix RX/TX
+- Check out https://jgromes.github.io/RadioLib/class_module.html as reference when declaring the radio module
+- Test different pin configs

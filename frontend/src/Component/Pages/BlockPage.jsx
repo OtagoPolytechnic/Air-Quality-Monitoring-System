@@ -5,6 +5,8 @@ import { NavLink } from 'react-router-dom';
 import { Co2Sensor } from '../Co2/Co2Sensor';
 import { useParams } from 'react-router-dom';
 import { checkOfflineDate } from '../../utils/dateTime/dateTimeFunctions';
+import OverviewPanel from "../Tables/OverviewPanel";
+
 
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
@@ -63,6 +65,7 @@ useEffect(() => {
           <p>{(error)}</p>
         )}
       </>
+      <OverviewPanel />
     </div>
     )
 }

@@ -27,3 +27,10 @@ export const tableHeadersUsers = [
 export const tableHeadersBlocks = [
   { key: 'blockName', label: 'Block Name' },
 ]
+
+export const tableHeadersOverview = [
+  { label: 'Room', key: 'room_number' },
+  { label: 'CO2 Level', key: 'co2Level' },
+  { label: 'Temperature', key: 'temperature' },
+  { label: 'Last Updated', key: 'lastUpdated' },
+];

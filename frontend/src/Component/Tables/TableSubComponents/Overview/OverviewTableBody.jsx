@@ -1,16 +1,22 @@
 import React from 'react';
 import TableItem from '../TableItem';
 
+
 const OverviewTableBody = ({ tableFields }) => {
   return (
     <tbody className="bg-white divide-y divide-gray-200">
       {tableFields.map((item) => {
         const minutesSinceLastUpdated = getMinutesSinceLastUpdated(item.lastUpdated);
+        const impact = getImpact(item.co2Level);
+
         return (
-          <tr key={item.dev_eui} className="hover:bg-gray-100">
-            <TableItem item={item.room_number} />
+          <tr key={item.dev_eui} className="hover:bg-gray-100 even:bg-gray-50">
+              <TableItem item={item.room_number} />
             <td className={`pl-1 py-2 font-medium whitespace-nowrap ${getCO2ColorClass(item.co2Level)}`}>
               {item.co2Level} ppm
+            </td>
+            <td className={`pl-1 py-2 font-medium text-gray-900 whitespace-nowrap`}>
+              {impact}
             </td>
             <td className="pl-1 py-2 font-medium text-gray-900 whitespace-nowrap">
               {item.temperature}°C
@@ -24,6 +30,17 @@ const OverviewTableBody = ({ tableFields }) => {
     </tbody>
   );
 };
+
+
+const getImpact = (co2Level) => {
+  if (!co2Level) return 'No data';
+  if (co2Level < 800) return 'Test good';
+  if (co2Level < 1000) return 'Test Moderate';
+  if (co2Level < 1200) return 'Test Fair';
+  if (co2Level < 1400) return 'Test Poor';
+  return 'Dead';
+}
+
 
 const getMinutesSinceLastUpdated = (lastUpdated) => {
   const currentTime = new Date();

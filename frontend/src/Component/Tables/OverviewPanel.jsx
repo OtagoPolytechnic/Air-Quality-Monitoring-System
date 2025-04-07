@@ -10,7 +10,7 @@ const OverviewPanel = () => {
     <>
        {/* Do we really need this?  */}
       <TableButton text={'Refresh Data'} onClick={() => window.location.reload()} />
-      <section className={'relative overflow-x-auto mx-4 rounded-lg border shadow-sm'}>
+      <section className={'relative overflow-x-auto w-4/5 mx-auto rounded-lg border shadow-sm mb-4'}>
         <OverviewTable />
       </section>
     </>

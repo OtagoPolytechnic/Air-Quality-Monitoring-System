@@ -8,7 +8,6 @@ export const useGetRoomData = (url) => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        // Step 1: Get the list of rooms
         const response = await fetch(url);
         
         if (!response.ok) {

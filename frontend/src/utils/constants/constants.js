@@ -31,6 +31,7 @@ export const tableHeadersBlocks = [
 export const tableHeadersOverview = [
   { label: 'Room', key: 'room_number' },
   { label: 'CO2 Level', key: 'co2Level' },
+  { label: 'Impacts', key: 'impact' },
   { label: 'Temperature', key: 'temperature' },
   { label: 'Last Updated', key: 'lastUpdated' },
 ];

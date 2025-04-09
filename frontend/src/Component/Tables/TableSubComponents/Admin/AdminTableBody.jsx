@@ -11,10 +11,9 @@ const AdminTableBody = ({ tableFields, updateTableData }) => {
   const [modal, setModal] = useState(false);
   const [actionType, setActionType] = useState('');
   const [selectedItem, setSelectedItem] = useState(null); // State to hold the selected item
-console.log(tableFields)
+  // console.log(tableFields)
   const handleClick = () => {
     setModal(!modal);
-    
   };
 
   const handleEditClick = (type, item) => {

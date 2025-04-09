@@ -2,10 +2,18 @@ import {useState, useEffect} from 'react';
 
 
 export const useGetDeviceList = (apiKey) => {
-    const [devices, setDevices] = useState([]);
-    const [apiError, setApiError] = useState('');
-
+    const [devices, setDevices] = useState([
+        {
+            id: '',
+            room_number: '',
+            dev_eui: '',
+            blockName: '',
+        },
+    ]);
+    const [apiError, setApiError] = useState("");
+    
     const fetchData = async () => {
+        let localError = "";
         try {
             const response = await fetch(apiKey);
             const data = await response.json();
@@ -19,7 +27,9 @@ export const useGetDeviceList = (apiKey) => {
             });
             setDevices(mappedData);
         } catch (error) {
-            setApiError(error.message);
+            localError = error.message;
+        } finally {
+            setApiError(localError);
         }
     };
 

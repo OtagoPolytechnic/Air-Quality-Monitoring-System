@@ -18,7 +18,7 @@ export const PopUp = ({
     e.preventDefault();
 
     try {
-      if(actionType === 'add') {
+      if (actionType === 'add') {
         // Make API call to add new device
         alert('Successfully added new device');
 

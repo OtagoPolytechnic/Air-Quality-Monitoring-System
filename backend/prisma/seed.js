@@ -1,12 +1,15 @@
 import { PrismaClient } from '@prisma/client';
-import seedDevices from './data/seed/seedDevices.json' assert { type: 'json' };
-import seedSensorData from './data/seed/seedSensorData.json' assert { type: 'json' };
-import seedBlocks from './data/seed/seedBlocks.json' assert { type: 'json' };
-
+import fs from 'fs/promises';
+ 
 const prisma = new PrismaClient();
-
+ 
 const main = async () => {
   try {
+    // Load JSON files
+    const seedDevices = JSON.parse(await fs.readFile('./prisma/data/seed/seedDevices.json', 'utf8'));
+    const seedSensorData = JSON.parse(await fs.readFile('./prisma/data/seed/seedSensorData.json', 'utf8'));
+    const seedBlocks = JSON.parse(await fs.readFile('./prisma/data/seed/seedBlocks.json', 'utf8'));
+ 
     for (let i = 0; i < seedBlocks.data.length; i++) {
       const blockSeed = seedBlocks.data[i];
       const existingBlocks = await prisma.block.findFirst({
@@ -18,7 +21,7 @@ const main = async () => {
           ],
         },
       });
-
+ 
       if (!existingBlocks) {
         const { blockName } = blockSeed;
         await prisma.block.create({
@@ -29,7 +32,7 @@ const main = async () => {
         console.log(`Block ${blockName} seeded`);
       }
     }
-
+ 
     for (let i = 0; i < seedDevices.data.length; i++) {
       const deviceSeed = seedDevices.data[i];
       const existingDevices = await prisma.device.findFirst({
@@ -44,7 +47,7 @@ const main = async () => {
           ],
         },
       });
-
+ 
       if (!existingDevices) {
         const { room_number, deviceId, dev_eui, blockId } = deviceSeed;
         console.log(blockId);
@@ -56,14 +59,14 @@ const main = async () => {
             blockId,
           },
         });
-
+ 
         console.log(`Device ${deviceId} seeded`);
       }
     }
-
+ 
     for (let i = 0; i < seedSensorData.data.length; i++) {
       const sensorSeed = seedSensorData.data[i];
-
+ 
       const { co2, temperature, deviceId, dev_eui } = sensorSeed;
       await prisma.sensorData.create({
         data: {
@@ -75,7 +78,7 @@ const main = async () => {
       });
       console.log(`Sensor Data ${deviceId} seeded`);
     }
-
+ 
     await prisma.$disconnect();
   } catch (error) {
     console.error('Error seeding', error);
@@ -83,5 +86,5 @@ const main = async () => {
     process.exit(1);
   }
 };
-
+ 
 main();

@@ -59,7 +59,7 @@ export const RoomPage = () => {
             <Co2Sensor room_number={devices.room_number} co2={checkOfflineDate(devices.createdAt) ? 0 : devices.co2} temp={devices.temperature} size="24rem" />
 
           </div>
-          <SensorHistory dev_eui={devices.dev_eui} />
+          <SensorHistory dev_eui={devices.dev_eui}/>
         </div>
        </>
         ) : (

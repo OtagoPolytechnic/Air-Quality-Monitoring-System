@@ -51,10 +51,15 @@ useEffect(() => {
           </>
         ) : devices ? (
                   <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
               {devices.map((device) => (
                 <NavLink to={`/${blockName}/${device.room_number}`} key={device.dev_eui} data-cy={device.room_number}>
-                  <Co2Sensor  room_number={device.room_number} co2={checkOfflineDate(device.createdAt) ? 0 : device.co2} />
+                  <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-transparent hover:border-gray-300 transition-all duration-300">
+                    <div className="text-base font-medium text-gray-700 mb-2 tracking-tight">
+                    Room {device.room_number}
+                    </div>
+                  <Co2Sensor room_number={device.room_number} co2={checkOfflineDate(device.createdAt) ? 0 : device.co2} />
+                  </div>
                 </NavLink>
               ))}
             </div>

@@ -87,6 +87,11 @@
       "dev_eui": "110009324b5456f5",
       "createdAt": "2021-06-02T09:00:00.000Z",
       "blockId": 2
+    },
+    {
+      "id": 12,
+      "deviceId": "eui-11000sd24b5456f5",
+      "dev_eui": "11000sd24b5456f5"
     }
   ]
 }

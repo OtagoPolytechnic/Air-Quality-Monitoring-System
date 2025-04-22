@@ -39,7 +39,7 @@ const getDevice = async (req, res) => {
     if (!device || device.length === 0) {
       return res.status(STATUS_CODES.NOT_FOUND).json({
         statusCode: res.statusCode,
-        message: `Device ${deviceID} not found on the server`,
+        message: `Device ${dev_eui} not found on the server`,
       });
     }
 
@@ -78,7 +78,7 @@ const getAllDevices = async (req, res) => {
           select: {
             blockName: true,
           },
-        }
+        },
       },
       take: Number(amount),
       skip: Number(page - 1) * Number(amount),
@@ -162,7 +162,6 @@ const updateDeviceBlock = async (req, res) => {
       where: { dev_eui: String(dev_eui) },
     });
 
-
     if (!getDevice || getDevice.length === 0) {
       return res.status(STATUS_CODES.NOT_FOUND).json({
         statusCode: res.statusCode,
@@ -170,26 +169,38 @@ const updateDeviceBlock = async (req, res) => {
       });
     }
 
-    const updatedBlockName = await prisma.device.update({
-      where: { dev_eui: String(dev_eui) },
-      data: { block: { connect: { blockName } } },
-    });
+    if (blockName === 'Unassigned') {
+      const removeBlock = await prisma.device.update({
+        where: { dev_eui: String(dev_eui) },
+        data: { block: { disconnect: true } },
+      });
 
-    console.log(updatedBlockName);
+      return res.status(STATUS_CODES.OK).json({
+        statusCode: res.statusCode,
+        message: `Device Block removed successfully`,
+        data: removeBlock,
+      });
+    } else {
+      const updatedBlockName = await prisma.device.update({
+        where: { dev_eui: String(dev_eui) },
+        data: { block: { connect: { blockName } } },
+      });
 
-    return res.status(STATUS_CODES.OK).json({
-      statusCode: res.statusCode,
-      message: `Device Block updated successfully`,
-      data: updatedBlockName,
-    });
+      console.log(updatedBlockName);
+
+      return res.status(STATUS_CODES.OK).json({
+        statusCode: res.statusCode,
+        message: `Device Block updated successfully`,
+        data: updatedBlockName,
+      });
+    }
   } catch (error) {
     return res.status(STATUS_CODES.SERVER_ERROR).json({
       statusCode: res.statusCode,
-      message: error.message
+      message: error.message,
     });
   }
-
-}
+};
 
 const getDeviceLatestData = async (req, res) => {
   try {
@@ -222,7 +233,7 @@ const getDeviceLatestData = async (req, res) => {
       statusCode: res.status,
       message: error.message,
     });
-}
+  }
 };
 
-export { getDevice, getAllDevices, updateDeviceRoom, updateDeviceBlock, getDeviceLatestData }
+export { getDevice, getAllDevices, updateDeviceRoom, updateDeviceBlock, getDeviceLatestData };

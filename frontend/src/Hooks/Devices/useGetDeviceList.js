@@ -20,9 +20,9 @@ export const useGetDeviceList = (apiKey) => {
             const mappedData = data.data.map((item) => {
                 return {
                     id: item.id,
-                    room_number: item.room_number,
+                    room_number: item.room_number ? item.room_number : "Unassigned",
                     dev_eui: item.dev_eui,
-                    blockName: item.block ? item.block.blockName : "[Unassigned]",
+                    blockName: item.block ? item.block.blockName : "Unassigned",
                 };
             });
             setDevices(mappedData);

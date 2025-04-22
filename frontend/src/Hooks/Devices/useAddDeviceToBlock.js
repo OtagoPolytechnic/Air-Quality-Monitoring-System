@@ -30,7 +30,6 @@ export const useAddDeviceToBlock = (apiKey) => {
             if (statusCode === 200) {
                 return setUpdateSuccess(message);
             } else {
-                // console.clear();
                 setApiError(message);
             }
         } catch (error) {

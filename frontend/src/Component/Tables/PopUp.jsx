@@ -11,8 +11,8 @@ export const PopUp = ({
   actionType
 }) => {
   // Set default state values based on `item`
-  const [name, setName] = useState(item?.room_number || '');
-  const [blockName, setBlockName] = useState(item?.blockName || '');
+  const [roomNumber, setRoomNumber] = useState(item.room_number);
+  const [blockName, setBlockName] = useState(item.blockName);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,12 +28,12 @@ export const PopUp = ({
 
       const updatedItem = {
         dev_eui: item.dev_eui || 'new-dev-eui', // If item is empty, generate a new dev_eui or leave blank
-        room_number: name, // Updated name (room_number)
+        room_number: roomNumber, // Updated name (room_number)
         blockName: blockName // Updated blockName
       };
 
       // Make API call to update name (room_number) if changed
-      if (item.room_number !== name) {
+      if (item.room_number !== roomNumber) {
         await fetch(`${apiKey}/api/v1/devices/${item?.dev_eui}`, {
           method: 'PUT',
           headers: {
@@ -84,16 +84,16 @@ export const PopUp = ({
                 htmlFor="name"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Name
+                Room Number
               </label>
               <input
                 required
                 type="text"
                 id="name"
                 name="name"
-                placeholder='Device name'
-                value={name} // Controlled input
-                onChange={(e) => setName(e.target.value)} // Update state
+                placeholder={item.room_number}
+                value={roomNumber} // Controlled input
+                onChange={(e) => setRoomNumber(e.target.value)} // Update state
                 className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
               />
             </div>
@@ -129,6 +129,7 @@ export const PopUp = ({
                 onChange={(e) => setBlockName(e.target.value)} // Update state
                 className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
               >
+                <option value="Unassigned">Unassigned</option>
                 {listOfBlocks && listOfBlocks.length > 0 ? (
                   listOfBlocks
                     .sort((a, b) => a.blockName.localeCompare(b.blockName)) 
@@ -137,6 +138,7 @@ export const PopUp = ({
                         {block.blockName}
                       </option>
                     ))
+                    
                 ) : (
                   <option value="">No blocks available</option> 
                 )}

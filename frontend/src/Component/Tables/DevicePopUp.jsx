@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { UpdateButton } from '../Sensor/UpdateSensorSubComponents/UpdateButton';
 import { useAddDeviceToBlock } from '../../Hooks/Devices/useAddDeviceToBlock';
-import {UpdateFieldResponse} from '../Sensor/UpdateSensorSubComponents/UpdateFieldResponse';
+import { UpdateFieldResponse } from '../Sensor/UpdateSensorSubComponents/UpdateFieldResponse';
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
 export const PopUp = ({
@@ -14,6 +14,8 @@ export const PopUp = ({
   // Set default state values based on `item`
   const [roomNumber, setRoomNumber] = useState(item.room_number);
   const [blockName, setBlockName] = useState(item.blockName);
+  const [deviceEUI, setDeviceEUI] = useState(item.dev_eui);
+  const [deviceName, setDeviceName] = useState(item.deviceId);
   const {
     addDeviceToBlockRequest,
     resetApiError,
@@ -40,8 +42,9 @@ export const PopUp = ({
       }
 
       const updatedItem = {
-        dev_eui: item.dev_eui,
         room_number: roomNumber, // Updated name (room_number)
+        deviceId: deviceName, // Updated name (deviceId)
+        dev_eui: deviceEUI,
         blockName: blockName // Updated blockName
       };
 
@@ -87,35 +90,34 @@ export const PopUp = ({
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-        <h1 className="text-lg ml-4 mt-4 font-bold">
-          {modalTitle}
-        </h1>
+        <h1 className="text-xl ml-4 mt-4 font-bold">{modalTitle}</h1>
         <div className="px-6 py-2">
           <form onSubmit={handleSubmit}>
             <div>
+              <h1 className="text-lg mt-2 font-semibold">Device Information</h1>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm leading-8 text-gray-900 mt-2"
               >
-                Room Number
+                Device Name <span className="text-red-500">*</span>
               </label>
               <input
                 required
                 type="text"
                 id="name"
                 name="name"
-                placeholder={item?.room_number || "Unassigned"}
-                value={roomNumber} // Controlled input
-                onChange={(e) => setRoomNumber(e.target.value)} // Update state
-                className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
+                placeholder={item?.deviceId || 'Enter name'}
+                value={deviceName} // Controlled input
+                onChange={(e) => setDeviceName(e.target.value)} // Update state
+                className="p-2 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
               />
             </div>
             <div>
               <label
                 htmlFor="deviceEUI"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm leading-8 text-gray-900 mt-2"
               >
-                Device EUI
+                Device EUI <span className="text-red-500">*</span>
               </label>
               <input
                 disabled={disabled} // Disable for add action
@@ -123,14 +125,36 @@ export const PopUp = ({
                 type="text"
                 id="deviceEUI"
                 name="deviceEUI"
+                value={deviceEUI}
+                onChange={(e) => setDeviceEUI(e.target.value)}
                 defaultValue={item?.dev_eui} // Display the device EUI
-                className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
+                className="p-2 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
+              />
+            </div>
+            <h1 className="text-lg mt-4 font-semibold">Location Information</h1>
+            <div>
+              <label
+                htmlFor="room_number"
+                className="block text-sm leading-8 text-gray-900 mt-2"
+              >
+                Room Number
+              </label>
+              <input
+                required
+                type="text"
+                id="room_number"
+                name="room_number"
+                placeholder={item?.room_number || 'Unassigned'}
+                defaultValue="Unassigned"
+                value={roomNumber} // Controlled input
+                onChange={(e) => setRoomNumber(e.target.value)} // Update state
+                className="p-2 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
               />
             </div>
             <div>
               <label
                 htmlFor="blockName"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm leading-8 text-gray-900 mt-2"
               >
                 Block
               </label>
@@ -138,9 +162,11 @@ export const PopUp = ({
                 required
                 id="blockName"
                 name="blockName"
+                disabled={disabled} // Disable for add action
+                placeholder="Select Block"
                 value={blockName} // Controlled input
                 onChange={(e) => setBlockName(e.target.value)} // Update state
-                className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
+                className="p-2 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
               >
                 <option value="Unassigned">Unassigned</option>
                 {listOfBlocks && listOfBlocks.length > 0 ? (
@@ -156,7 +182,7 @@ export const PopUp = ({
                 )}
               </select>
             </div>
-            <div className="flex justify-end mb-2 mt-4">
+            <div className="flex justify-end mb-2 mt-8">
               <UpdateButton
                 style={
                   'bg-blue-500 w-[150px] h-[45px] text-white rounded-md ml-6'

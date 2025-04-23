@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { UpdateButton } from '../../../Sensor/UpdateSensorSubComponents/UpdateButton';
-import PopUp from '../../PopUp';
+import PopUp from '../../DevicePopUp';
 import TableItem from '../TableItem';
 import { useGetBlockList } from '../../../../Hooks/Blocks/useGetBlockList';
 

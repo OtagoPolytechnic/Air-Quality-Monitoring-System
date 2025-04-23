@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { UpdateButton } from '../Sensor/UpdateSensorSubComponents/UpdateButton';
+import { useAddDeviceToBlock } from '../../Hooks/Devices/useAddDeviceToBlock';
 
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
@@ -13,17 +14,20 @@ export const PopUp = ({
   // Set default state values based on `item`
   const [roomNumber, setRoomNumber] = useState(item.room_number);
   const [blockName, setBlockName] = useState(item.blockName);
+  const { addDeviceToBlockRequest, resetApiError, resetUpdateSuccess, updateSuccess } = useAddDeviceToBlock(`${apiKey}/api/v1/blocks`);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      if (actionType === 'add') {
-        // Make API call to add new device
-        alert('Successfully added new device');
-
-        // // Close the modal
-        handleClick();
+      switch (actionType) {
+        case 'add':
+          handleClick();
+          break;
+        case 'edit':
+          break;
+        default:
+          throw new Error('Invalid action type');
       }
 
       const updatedItem = {

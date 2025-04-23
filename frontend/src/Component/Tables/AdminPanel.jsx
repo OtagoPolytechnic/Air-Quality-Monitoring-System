@@ -1,7 +1,7 @@
 import AdminTable from './TableSubComponents/Admin/AdminTable';
 import TableButton from './TableSubComponents/TableButton';
 import { useGetBlockList } from '../../Hooks/Blocks/useGetBlockList';
-import PopUp from './PopUp';
+import PopUp from './DevicePopUp';
 import { useState } from 'react';
 
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { UpdateButton } from '../Sensor/UpdateSensorSubComponents/UpdateButton';
 import { useAddDeviceToBlock } from '../../Hooks/Devices/useAddDeviceToBlock';
-
+import {UpdateFieldResponse} from '../Sensor/UpdateSensorSubComponents/UpdateFieldResponse';
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
 export const PopUp = ({
@@ -14,7 +14,16 @@ export const PopUp = ({
   // Set default state values based on `item`
   const [roomNumber, setRoomNumber] = useState(item.room_number);
   const [blockName, setBlockName] = useState(item.blockName);
-  const { addDeviceToBlockRequest, resetApiError, resetUpdateSuccess, updateSuccess } = useAddDeviceToBlock(`${apiKey}/api/v1/blocks`);
+  const {
+    addDeviceToBlockRequest,
+    resetApiError,
+    resetUpdateSuccess,
+    updateSuccess
+  } = useAddDeviceToBlock(`${apiKey}/api/v1/blocks`);
+  const [formError, setFormError] = useState('');
+  const [apiError, setApiError] = useState('');
+  const disabled = actionType === 'edit';
+  const modalTitle = actionType === 'add' ? 'Add Device' : 'Edit Device';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +40,7 @@ export const PopUp = ({
       }
 
       const updatedItem = {
-        dev_eui: item.dev_eui || 'new-dev-eui', // If item is empty, generate a new dev_eui or leave blank
+        dev_eui: item.dev_eui,
         room_number: roomNumber, // Updated name (room_number)
         blockName: blockName // Updated blockName
       };
@@ -79,7 +88,7 @@ export const PopUp = ({
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
         <h1 className="text-lg ml-4 mt-4 font-bold">
-          {actionType === 'add' ? 'Add Device' : 'Edit Device'}
+          {modalTitle}
         </h1>
         <div className="px-6 py-2">
           <form onSubmit={handleSubmit}>
@@ -95,7 +104,7 @@ export const PopUp = ({
                 type="text"
                 id="name"
                 name="name"
-                placeholder={item.room_number}
+                placeholder={item?.room_number || "Unassigned"}
                 value={roomNumber} // Controlled input
                 onChange={(e) => setRoomNumber(e.target.value)} // Update state
                 className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6"
@@ -109,7 +118,7 @@ export const PopUp = ({
                 Device EUI
               </label>
               <input
-                disabled={actionType === 'edit'} // Disable for add action
+                disabled={disabled} // Disable for add action
                 placeholder="FF:FF:FF:FF:FF:FF"
                 type="text"
                 id="deviceEUI"
@@ -136,15 +145,14 @@ export const PopUp = ({
                 <option value="Unassigned">Unassigned</option>
                 {listOfBlocks && listOfBlocks.length > 0 ? (
                   listOfBlocks
-                    .sort((a, b) => a.blockName.localeCompare(b.blockName)) 
+                    .sort((a, b) => a.blockName.localeCompare(b.blockName))
                     .map((block) => (
                       <option key={block.blockName} value={block.blockName}>
                         {block.blockName}
                       </option>
                     ))
-                    
                 ) : (
-                  <option value="">No blocks available</option> 
+                  <option value="">No blocks available</option>
                 )}
               </select>
             </div>
@@ -153,7 +161,7 @@ export const PopUp = ({
                 style={
                   'bg-blue-500 w-[150px] h-[45px] text-white rounded-md ml-6'
                 }
-                type={'submit'} 
+                type={'submit'}
                 text={actionType === 'edit' ? 'Save Changes' : 'Add Device'}
               />
               <UpdateButton
@@ -165,6 +173,10 @@ export const PopUp = ({
                 text="Cancel"
               />
             </div>
+            <UpdateFieldResponse
+              styles={`${formError || apiError ? 'text-red-500' : 'text-green-500'} mr-2 text-center`}
+              text={updateSuccess || formError || apiError}
+            />
           </form>
         </div>
       </div>

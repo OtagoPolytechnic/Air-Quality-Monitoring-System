@@ -29,8 +29,8 @@ describe('AdminTable Component', () => {
 
     it('renders table headers and body when data is available', async () => {
         const mockDevices = [
-          { id: 1, dev_eui: 'Device 1', room_number: '101', blockName: 'Block A' },
-          { id: 2, dev_eui: 'Device 2', room_number: '102', blockName: 'Block B' },
+          { id: 1, deviceName: 'Dev1', dev_eui: 'Device 1', room_number: '101', blockName: 'Block A' },
+          { id: 2, deviceName: 'Dev2', dev_eui: 'Device 2', room_number: '102', blockName: 'Block B' },
         ];
       
         useGetDeviceList.mockReturnValue({

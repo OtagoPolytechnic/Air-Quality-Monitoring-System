@@ -20,10 +20,10 @@ export const PopUp = ({
     addDeviceToBlockRequest,
     resetApiError,
     resetUpdateSuccess,
-    updateSuccess
+    updateSuccess,
+    apiError
   } = useAddDeviceToBlock(`${apiKey}/api/v1/blocks`);
   const [formError, setFormError] = useState('');
-  const [apiError, setApiError] = useState('');
   const disabled = actionType === 'edit';
   const modalTitle = actionType === 'add' ? 'Add Device' : 'Edit Device';
 
@@ -31,8 +31,16 @@ export const PopUp = ({
     e.preventDefault();
 
     try {
+      resetApiError();
+      resetUpdateSuccess();
+      setFormError('');
       switch (actionType) {
         case 'add':
+          if (!deviceName || !deviceEUI) {
+            setFormError('Please fill in all required fields.');
+            return;
+          }
+          
           handleClick();
           break;
         case 'edit':
@@ -101,7 +109,7 @@ export const PopUp = ({
                 htmlFor="name"
                 className="block text-sm font-semibold leading-8 text-gray-900 mt-2"
               >
-                Device Name <span className="text-red-500">*</span>
+                Device Name {!disabled && <span className="text-red-500">*</span>}
               </label>
               <input
                 required
@@ -119,7 +127,7 @@ export const PopUp = ({
                 htmlFor="deviceEUI"
                 className="block text-sm font-semibold leading-8 text-gray-900 mt-2"
               >
-                Device EUI <span className="text-red-500">*</span>
+                Device EUI {!disabled && <span className="text-red-500">*</span>}
               </label>
               <input
                 disabled={disabled} // Disable for add action
@@ -164,7 +172,6 @@ export const PopUp = ({
                 required
                 id="blockName"
                 name="blockName"
-                disabled={disabled} // Disable for add action
                 placeholder="Select Block"
                 value={blockName} // Controlled input
                 onChange={(e) => setBlockName(e.target.value)} // Update state

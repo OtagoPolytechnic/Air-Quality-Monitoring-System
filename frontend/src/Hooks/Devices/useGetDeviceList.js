@@ -5,6 +5,7 @@ export const useGetDeviceList = (apiKey) => {
     const [devices, setDevices] = useState([
         {
             id: '',
+            deviceName: '',
             room_number: '',
             dev_eui: '',
             blockName: '',
@@ -20,6 +21,7 @@ export const useGetDeviceList = (apiKey) => {
             const mappedData = data.data.map((item) => {
                 return {
                     id: item.id,
+                    deviceName: item.deviceId,
                     room_number: item.room_number ? item.room_number : "Unassigned",
                     dev_eui: item.dev_eui,
                     blockName: item.block ? item.block.blockName : "Unassigned",

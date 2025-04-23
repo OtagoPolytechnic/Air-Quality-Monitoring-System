@@ -40,6 +40,8 @@ export const PopUp = ({
             setFormError('Please fill in all required fields.');
             return;
           }
+
+          
           
           handleClick();
           break;
@@ -50,10 +52,10 @@ export const PopUp = ({
       }
 
       const updatedItem = {
-        room_number: roomNumber, // Updated name (room_number)
-        deviceId: deviceName, // Updated name (deviceId)
+        room_number: roomNumber,
+        deviceId: deviceName,
         dev_eui: deviceEUI,
-        blockName: blockName // Updated blockName
+        blockName: blockName
       };
 
       // Make API call to update name (room_number) if changed

@@ -12,8 +12,10 @@ export const userRoles = {
 
 export const tableHeaders = [
   { key: 'dev_eui', label: 'Device EUI' },
+  { key: 'deviceName', label: 'Device Name' },
   { key: 'room_number', label: 'Room Number' },
-  { key: 'blockName', label: 'Block Name' }
+  { key: 'blockName', label: 'Block Name' },
+  { key: 'lastSeen', label: 'Last Seen' }
 ];
 
 export const tableHeadersUsers = [

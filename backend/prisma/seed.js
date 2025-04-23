@@ -50,7 +50,7 @@ const main = async () => {
  
       if (!existingDevices) {
         const { room_number, deviceId, dev_eui, blockId } = deviceSeed;
-        console.log(blockId);
+
         await prisma.device.create({
           data: {
             room_number,

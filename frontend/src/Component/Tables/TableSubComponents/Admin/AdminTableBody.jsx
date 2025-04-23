@@ -24,7 +24,25 @@ const AdminTableBody = ({ tableFields, updateTableData }) => {
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    
+    const now = new Date();
+
+    const isToday =
+      date.getDate() === now.getDate() &&
+      date.getMonth() === now.getMonth() &&
+      date.getFullYear() === now.getFullYear();
+
+    if (isToday) {
+      const diffInMs = now - date; // Difference in milliseconds
+      const diffInMinutes = Math.floor(diffInMs / (1000 * 60)); // Convert to minutes
+
+      if (diffInMinutes < 60) {
+        return `${diffInMinutes} minutes ago`;
+      } else {
+        const diffInHours = Math.floor(diffInMinutes / 60);
+        return `${diffInHours} hours ago`;
+      }
+    }
+
     const options = {
       hour: '2-digit',
       minute: '2-digit',
@@ -34,7 +52,7 @@ const AdminTableBody = ({ tableFields, updateTableData }) => {
       year: '2-digit'
     };
 
-    return date.toLocaleString('en-GB', options);
+    return date.toLocaleString('en-GB', options).replace(',', '');
   };
 
   return (

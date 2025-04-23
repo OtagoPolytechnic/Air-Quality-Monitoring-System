@@ -100,16 +100,16 @@ export const PopUp = ({
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="max-w-lg rounded-xl overflow-hidden shadow-lg bg-white p-4">
-        <div className="w-full p-4">
-          <div className="flex self-center items-center justify-center mb-6">
+        <div className="w-full p-4 text-gray-900">
+          <div className="flex self-center items-center justify-center mb-8">
             <h1 className="text-3xl font-bold">{modalTitle}</h1>
           </div>
           <form onSubmit={handleSubmit}>
             <div className="w-full">
-              <h1 className="text-lg font-bold">Device Information</h1>
+              <h1 className="text-xl font-bold">Device Information</h1>
               <label
                 htmlFor="name"
-                className="block text-sm font-semibold leading-8 text-gray-900 mt-2"
+                className="block text-sm font-semibold leading-8 mt-2"
               >
                 Device Name {!disabled && <span className="text-red-500">*</span>}
               </label>
@@ -121,13 +121,13 @@ export const PopUp = ({
                 placeholder={item?.deviceId || 'Enter name'}
                 value={deviceName} // Controlled input
                 onChange={(e) => setDeviceName(e.target.value)} // Update state
-                className="p-2 block w-full rounded-lg border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
+                className="p-2 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
               />
             </div>
             <div>
               <label
                 htmlFor="deviceEUI"
-                className="block text-sm font-semibold leading-8 text-gray-900 mt-2"
+                className="block text-sm font-semibold leading-8 mt-2"
               >
                 Device EUI {!disabled && <span className="text-red-500">*</span>}
               </label>
@@ -140,14 +140,14 @@ export const PopUp = ({
                 value={deviceEUI}
                 onChange={(e) => setDeviceEUI(e.target.value)}
                 defaultValue={item?.dev_eui} // Display the device EUI
-                className="p-2 block w-full rounded-lg border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
+                className="p-2 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
               />
             </div>
-            <h1 className="text-lg mt-4 font-bold">Location Information</h1>
+            <h1 className="text-xl mt-8 font-bold">Location Information</h1>
             <div>
               <label
                 htmlFor="room_number"
-                className="block text-sm font-semibold leading-8 text-gray-900 mt-2"
+                className="block text-sm font-semibold leading-8 mt-2"
               >
                 Room Number
               </label>
@@ -160,13 +160,13 @@ export const PopUp = ({
                 defaultValue="Unassigned"
                 value={roomNumber} // Controlled input
                 onChange={(e) => setRoomNumber(e.target.value)} // Update state
-                className="p-2 block w-full rounded-lg border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
+                className="p-2 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
               />
             </div>
             <div>
               <label
                 htmlFor="blockName"
-                className="block text-sm font-semibold leading-8 text-gray-900 mt-2"
+                className="block text-sm font-semibold leading-8 mt-2"
               >
                 Block
               </label>
@@ -177,7 +177,7 @@ export const PopUp = ({
                 placeholder="Select Block"
                 value={blockName} // Controlled input
                 onChange={(e) => setBlockName(e.target.value)} // Update state
-                className="p-2 block w-full rounded-lg border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
+                className="p-2 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
               >
                 <option value="Unassigned">Unassigned</option>
                 {listOfBlocks && listOfBlocks.length > 0 ? (

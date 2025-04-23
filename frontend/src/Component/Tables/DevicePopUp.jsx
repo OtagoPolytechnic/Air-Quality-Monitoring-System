@@ -89,15 +89,17 @@ export const PopUp = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-        <h1 className="text-xl ml-4 mt-4 font-bold">{modalTitle}</h1>
-        <div className="px-6 py-2">
+      <div className="max-w-lg rounded overflow-hidden shadow-lg bg-white p-4">
+        <div className="p-8">
+          <div className="flex self-center items-center justify-center mb-6">
+            <h1 className="text-3xl font-bold">{modalTitle}</h1>
+          </div>
           <form onSubmit={handleSubmit}>
             <div>
-              <h1 className="text-lg mt-2 font-semibold">Device Information</h1>
+              <h1 className="text-lg font-bold">Device Information</h1>
               <label
                 htmlFor="name"
-                className="block text-sm leading-8 text-gray-900 mt-2"
+                className="block text-sm font-semibold leading-8 text-gray-900 mt-2"
               >
                 Device Name <span className="text-red-500">*</span>
               </label>
@@ -115,7 +117,7 @@ export const PopUp = ({
             <div>
               <label
                 htmlFor="deviceEUI"
-                className="block text-sm leading-8 text-gray-900 mt-2"
+                className="block text-sm font-semibold leading-8 text-gray-900 mt-2"
               >
                 Device EUI <span className="text-red-500">*</span>
               </label>
@@ -131,11 +133,11 @@ export const PopUp = ({
                 className="p-2 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
               />
             </div>
-            <h1 className="text-lg mt-4 font-semibold">Location Information</h1>
+            <h1 className="text-lg mt-4 font-bold">Location Information</h1>
             <div>
               <label
                 htmlFor="room_number"
-                className="block text-sm leading-8 text-gray-900 mt-2"
+                className="block text-sm font-semibold leading-8 text-gray-900 mt-2"
               >
                 Room Number
               </label>
@@ -154,7 +156,7 @@ export const PopUp = ({
             <div>
               <label
                 htmlFor="blockName"
-                className="block text-sm leading-8 text-gray-900 mt-2"
+                className="block text-sm font-semibold leading-8 text-gray-900 mt-2"
               >
                 Block
               </label>

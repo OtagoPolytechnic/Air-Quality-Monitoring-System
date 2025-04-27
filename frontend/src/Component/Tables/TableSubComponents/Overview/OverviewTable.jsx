@@ -11,7 +11,6 @@ const OverviewTable = () => {
   // Fetch room data
   const { rooms: initialData, apiError } = useGetRoomData(`${apiKey}/api/v1/devices`);
   const { sortedData, onSort, sortConfig } = useSortableData(initialData);
-  console.log('Sorted Data:', sortedData);
 
   return (
     <>

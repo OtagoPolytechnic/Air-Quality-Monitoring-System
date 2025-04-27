@@ -59,13 +59,14 @@ useEffect(() => {
                   <Co2Sensor  room_number={device.room_number} co2={checkOfflineDate(device.createdAt) ? 0 : device.co2} />
                 </NavLink>
               ))}
+              
             </div>
+            <OverviewPanel blockName={blockName} />
           </>
         ) : (
           <p>{(error)}</p>
         )}
       </>
-      <OverviewPanel />
     </div>
     )
 }

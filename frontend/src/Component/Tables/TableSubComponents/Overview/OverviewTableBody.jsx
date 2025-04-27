@@ -5,9 +5,9 @@ import TableItem from '../TableItem';
 const OverviewTableBody = ({ tableFields }) => {
   return (
     <tbody className="bg-white divide-y divide-gray-200">
-      {tableFields.map((item) => {
-        const minutesSinceLastUpdated = getMinutesSinceLastUpdated(item.lastUpdated);
-        const condition = getCondition(item.co2Level);
+      {tableFields.map((item) => { // Iterate through the tableFields array and render each room with sensor data
+        const minutesSinceLastUpdated = getMinutesSinceLastUpdated(item.lastUpdated); // Calculate the time since the last update
+        const condition = getCondition(item.co2Level); // Gets learning condition based on CO2 levels
 
         return (
           <tr key={item.dev_eui} className="hover:bg-gray-100 even:bg-gray-50">

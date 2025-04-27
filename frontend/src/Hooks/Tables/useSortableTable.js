@@ -25,7 +25,17 @@ const useSortableData = (initialData) => {
         const aValue = a[sortConfig.key];
         const bValue = b[sortConfig.key];
 
-        // If the values are strings, use localeCompare to sort alphabetically
+        // handling for CO2 levels and temp
+        const numericKeys = ['co2Level', 'temperature'];
+        
+        if (numericKeys.includes(sortConfig.key)) {
+          // Convert to numbers for proper numeric comparison
+          return sortConfig.direction === 'asc' 
+            ? parseFloat(aValue) - parseFloat(bValue)
+            : parseFloat(bValue) - parseFloat(aValue);
+        }
+        
+        // Standard comparison for other types
         const comparison =
           typeof aValue === 'string' && typeof bValue === 'string'
             ? aValue.localeCompare(bValue)

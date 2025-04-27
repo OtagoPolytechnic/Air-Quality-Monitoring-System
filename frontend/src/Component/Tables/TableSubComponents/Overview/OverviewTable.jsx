@@ -16,7 +16,7 @@ const OverviewTable = ({ blockName }) => {
     
   const { rooms: initialData, apiError } = useGetRoomData(endpoint, blockName); // Fetch data from the API in Hooks/Overview/useGetRoomData 
   const { sortedData, onSort, sortConfig } = useSortableData(initialData); // Sort the data using the custom hook useSortableData
-
+  console.log(initialData);
   return (
     <>
       {apiError ? (

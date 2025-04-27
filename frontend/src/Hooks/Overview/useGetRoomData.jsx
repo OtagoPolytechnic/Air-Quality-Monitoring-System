@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useGetRoomData = (endpoint, blockName) => {
+export const useGetRoomData = (endpoint, blockName) => { // Endpoint and blockName are passed from the OverviewTable component
   const [rooms, setRooms] = useState([]);
   const [apiError, setApiError] = useState(null);
 
@@ -8,7 +8,6 @@ export const useGetRoomData = (endpoint, blockName) => {
     const fetchData = async () => {
       try {
         const response = await fetch(endpoint);
-        
         if (!response.ok) {
           throw new Error('Failed to fetch room data');
         }
@@ -27,8 +26,7 @@ export const useGetRoomData = (endpoint, blockName) => {
             blockName: blockName
           }));
         } else {
-          // Process data for all devices endpoint
-          // Adjust according to your actual API response structure
+          // Process data for all devices if no blockName is provided
           processedData = data.map(device => ({
             room_number: device.room_number,
             dev_eui: device.dev_eui,

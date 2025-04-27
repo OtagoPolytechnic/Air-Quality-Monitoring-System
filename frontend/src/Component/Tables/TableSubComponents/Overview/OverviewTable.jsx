@@ -24,11 +24,11 @@ const OverviewTable = ({ blockName }) => {
       ) : (
         <>
           {sortedData.length === 0 ? (
-            <h1 className={'text-2xl text-center p-4'}>No room sensors found</h1> // If no sensors are found within a block
+            <h1 className={'text-2xl text-center p-4'}>No room sensors found</h1>
           ) : (
             <table className={'w-full text-medium text-left text-gray-500 divide-y divide-gray-200 '}>
-              <TableHeaders headers={tableHeadersOverview} onSort={onSort} sortConfig={sortConfig} />  {/* Render the table headers found in TableHeaders component */}
-              <OverviewTableBody tableFields={sortedData} /> {/* Render the table body using the OverviewTableBody component */}
+              <TableHeaders headers={tableHeadersOverview} onSort={onSort} sortConfig={sortConfig} />  
+              <OverviewTableBody tableFields={sortedData} />
             </table>
           )}
         </>

@@ -24,7 +24,6 @@ const TableHeaders = ({ headers, onSort, sortConfig }) => {
             </span>
           </th>
         ))}
-        <th className="py-3 px-1 sm:text-clip"></th>
       </tr>
     </thead>
   );

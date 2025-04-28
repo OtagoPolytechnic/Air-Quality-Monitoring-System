@@ -20,11 +20,14 @@ const AdminPanel = () => {
 
   return (
     <>
-      <TableButton text={'Add Device'} onClick={() => handleClick('add')} />
+      {/* <TableButton text={'Add Device'} onClick={() => handleClick('add')} /> */}
+      <div className="p-4">
+
       <section
         className={'relative overflow-x-auto mx-4 rounded-lg border shadow-sm'}
-      > <AdminTable />
+        > <AdminTable />
       </section>
+        </div>
       {modal && (
         <PopUp
           handleClick={handleClick}

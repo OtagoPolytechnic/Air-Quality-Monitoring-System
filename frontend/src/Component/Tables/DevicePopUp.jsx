@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { UpdateButton } from '../Sensor/UpdateSensorSubComponents/UpdateButton';
 import { useAddDeviceToBlock } from '../../Hooks/Devices/useAddDeviceToBlock';
 import { UpdateFieldResponse } from '../Sensor/UpdateSensorSubComponents/UpdateFieldResponse';
+import { useAddLocationToDevice } from '../../Hooks/Devices/useUpdateDeviceLocation';
 
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
@@ -18,12 +19,12 @@ export const PopUp = ({
   const [deviceEUI, setDeviceEUI] = useState(item.dev_eui);
   const [deviceId, setDeviceId] = useState(item.deviceId);
   const {
-    addDeviceToBlockRequest,
+    updateDeviceLocationRequest,
     resetApiError,
     resetUpdateSuccess,
     updateSuccess,
     apiError
-  } = useAddDeviceToBlock(`${apiKey}/api/v1/blocks`);
+  } = useAddLocationToDevice(`${apiKey}/api/v1`);
   const [formError, setFormError] = useState('');
   const disabled = actionType === 'edit';
   const modalTitle = actionType === 'add' ? 'Add Device' : 'Edit Device';
@@ -43,30 +44,8 @@ export const PopUp = ({
 
       if (blockName === 'Unassigned' && roomNumber !== 'Unassigned') return;
 
-      // Make API call to update name (room_number) if changed
-      if (item.room_number !== roomNumber) {
-        await fetch(`${apiKey}/api/v1/devices/${item?.dev_eui}`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(updatedItem) // Send updated room_number
-        });
-      }
-
-      // Make API call to update blockName if changed
-      if (item.blockName !== blockName) {
-        const response = await fetch(
-          `${apiKey}/api/v1/devices/addBlock/${item?.dev_eui}`,
-          {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedItem) // Send updated blockName
-          }
-        );
-
+      if (item.room_number !== roomNumber || item.blockName !== blockName) {
+        updateDeviceLocationRequest(updatedItem, deviceId);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -128,7 +107,7 @@ export const PopUp = ({
                     name="deviceEUI"
                     value={deviceEUI}
                     onChange={(e) => setDeviceEUI(e.target.value)}
-                    defaultValue={item?.dev_eui} // Display the device EUI
+                    // defaultValue={item?.dev_eui} // Display the device EUI
                     className="p-2 pl-3 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
                   />
                 </div>
@@ -193,7 +172,6 @@ export const PopUp = ({
                   id="room_number"
                   name="room_number"
                   placeholder={roomNumber ?? 'Unassigned'}
-                  defaultValue="Unassigned"
                   value={roomNumber}
                   onChange={(e) => setRoomNumber(e.target.value)}
                   className="p-2 pl-3 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
@@ -217,10 +195,10 @@ export const PopUp = ({
                 text="Cancel"
               />
             </div>
-            <UpdateFieldResponse
+            {/* <UpdateFieldResponse
               styles={`${formError || apiError ? 'text-red-500' : 'text-green-500'} mr-2 text-center`}
               text={updateSuccess || formError || apiError}
-            />
+            /> */}
           </form>
         </div>
       </div>

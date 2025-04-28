@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { UpdateButton } from '../Sensor/UpdateSensorSubComponents/UpdateButton';
 import { useAddDeviceToBlock } from '../../Hooks/Devices/useAddDeviceToBlock';
 import { UpdateFieldResponse } from '../Sensor/UpdateSensorSubComponents/UpdateFieldResponse';
+
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
 export const PopUp = ({
@@ -15,7 +16,7 @@ export const PopUp = ({
   const [roomNumber, setRoomNumber] = useState(item.room_number);
   const [blockName, setBlockName] = useState(item.blockName);
   const [deviceEUI, setDeviceEUI] = useState(item.dev_eui);
-  const [deviceName, setDeviceName] = useState(item.deviceId);
+  const [deviceId, setDeviceId] = useState(item.deviceId);
   const {
     addDeviceToBlockRequest,
     resetApiError,
@@ -36,13 +37,11 @@ export const PopUp = ({
       setFormError('');
       switch (actionType) {
         case 'add':
-          if (!deviceName || !deviceEUI) {
+          if (!deviceId || !deviceEUI) {
             setFormError('Please fill in all required fields.');
             return;
           }
 
-          
-          
           handleClick();
           break;
         case 'edit':
@@ -53,7 +52,7 @@ export const PopUp = ({
 
       const updatedItem = {
         room_number: roomNumber,
-        deviceId: deviceName,
+        deviceId: deviceId,
         dev_eui: deviceEUI,
         blockName: blockName
       };
@@ -105,22 +104,23 @@ export const PopUp = ({
             <h1 className="text-3xl font-bold">{modalTitle}</h1>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className="w-full">
-              <h1 className="text-xl font-bold">Device Information</h1>
+            <h1 className="text-xl font-bold">Device Information</h1>
+            <div>
               <label
-                htmlFor="name"
+                // htmlFor="deviceId"
                 className="block text-sm font-semibold leading-8 mt-2"
               >
-                Device Name {!disabled && <span className="text-red-500">*</span>}
+                Device ID{' '}
+                {!disabled && <span className="text-red-500">*</span>}
               </label>
               <input
                 required
                 type="text"
-                id="name"
-                name="name"
+                // id="deviceId"
+                // name="deviceId"
                 placeholder={item?.deviceId || 'Enter name'}
-                value={deviceName} // Controlled input
-                onChange={(e) => setDeviceName(e.target.value)} // Update state
+                value={deviceId} // Controlled input
+                onChange={(e) => setDeviceId(e.target.value)} // Update state
                 className="p-2 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
               />
             </div>
@@ -129,7 +129,8 @@ export const PopUp = ({
                 htmlFor="deviceEUI"
                 className="block text-sm font-semibold leading-8 mt-2"
               >
-                Device EUI {!disabled && <span className="text-red-500">*</span>}
+                Device EUI{' '}
+                {!disabled && <span className="text-red-500">*</span>}
               </label>
               <input
                 disabled={disabled} // Disable for add action

@@ -6,7 +6,7 @@ export const useGetDeviceList = (apiKey) => {
         {
             id: '',
             room_number: '',
-            deviceName: '',
+            deviceId: '',
             dev_eui: '',
             lastSeen: '',
             blockName: '',
@@ -23,7 +23,7 @@ export const useGetDeviceList = (apiKey) => {
                 return {
                     id: item.id,
                     room_number: item.room_number ? item.room_number : "Unassigned",
-                    deviceName: item.deviceId,
+                    deviceId: item.deviceId,
                     dev_eui: item.dev_eui,
                     lastSeen: item.updatedAt,
                     blockName: item.block ? item.block.blockName : "Unassigned",

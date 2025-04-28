@@ -3,6 +3,7 @@ import { UpdateButton } from '../../../Sensor/UpdateSensorSubComponents/UpdateBu
 import PopUp from '../../DevicePopUp';
 import TableItem from '../TableItem';
 import { useGetBlockList } from '../../../../Hooks/Blocks/useGetBlockList';
+import { formatDate } from '../../../../utils//dateTime/dateTimeFunctions';
 
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
@@ -11,7 +12,7 @@ const AdminTableBody = ({ tableFields, updateTableData }) => {
   const [modal, setModal] = useState(false);
   const [actionType, setActionType] = useState('');
   const [selectedItem, setSelectedItem] = useState(null); // State to hold the selected item
-  // console.log(tableFields)
+
   const handleClick = () => {
     setModal(!modal);
   };
@@ -22,46 +23,13 @@ const AdminTableBody = ({ tableFields, updateTableData }) => {
     handleClick();
   };
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const now = new Date();
-
-    const isToday =
-      date.getDate() === now.getDate() &&
-      date.getMonth() === now.getMonth() &&
-      date.getFullYear() === now.getFullYear();
-
-    if (isToday) {
-      const diffInMs = now - date; // Difference in milliseconds
-      const diffInMinutes = Math.floor(diffInMs / (1000 * 60)); // Convert to minutes
-
-      if (diffInMinutes < 60) {
-        return `${diffInMinutes} minutes ago`;
-      } else {
-        const diffInHours = Math.floor(diffInMinutes / 60);
-        return `${diffInHours} hours ago`;
-      }
-    }
-
-    const options = {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true,
-      day: '2-digit',
-      month: '2-digit',
-      year: '2-digit'
-    };
-
-    return date.toLocaleString('en-GB', options).replace(',', '');
-  };
-
   return (
     <>
       <tbody className="bg-white divide-y divide-gray-200">
         {tableFields.map((item) => (
           <tr key={item.id} className="hover:bg-gray-100">
+            <TableItem item={item.deviceId} />
             <TableItem item={item.dev_eui} />
-            <TableItem item={item.deviceName} />
             <TableItem item={item.room_number} />
             <TableItem item={item.blockName} />
             <TableItem item={formatDate(item.lastSeen)} />

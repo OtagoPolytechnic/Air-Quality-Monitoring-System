@@ -1,7 +1,7 @@
 const TableHeaders = ({ headers, onSort, sortConfig }) => {
   return (
     <thead>
-      <tr className="text-xs text-gray-700 uppercase bg-gray-200">
+      <tr className="text-xs text-gray-700 uppercase bg-gray-200 border-b-2 border-gray-300">
         {headers.map((header, index) => (
           <th
             key={index}

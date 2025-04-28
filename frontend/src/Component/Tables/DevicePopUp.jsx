@@ -41,46 +41,41 @@ export const PopUp = ({
         blockName: blockName
       };
 
-      if (
-        blockName !== 'Unassigned' ||
-        (blockName !== 'Unassigned' && roomNumber !== 'Unassigned')
-      ) {
-        // Make API call to update name (room_number) if changed
-        if (item.room_number !== roomNumber) {
-          await fetch(`${apiKey}/api/v1/devices/${item?.dev_eui}`, {
+      if (blockName === 'Unassigned' && roomNumber !== 'Unassigned') return;
+
+      // Make API call to update name (room_number) if changed
+      if (item.room_number !== roomNumber) {
+        await fetch(`${apiKey}/api/v1/devices/${item?.dev_eui}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(updatedItem) // Send updated room_number
+        });
+      }
+
+      // Make API call to update blockName if changed
+      if (item.blockName !== blockName) {
+        const response = await fetch(
+          `${apiKey}/api/v1/devices/addBlock/${item?.dev_eui}`,
+          {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify(updatedItem) // Send updated room_number
-          });
-        }
-
-        // Make API call to update blockName if changed
-        if (item.blockName !== blockName) {
-          const response = await fetch(
-            `${apiKey}/api/v1/devices/addBlock/${item?.dev_eui}`,
-            {
-              method: 'PUT',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(updatedItem) // Send updated blockName
-            }
-          );
-
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
+            body: JSON.stringify(updatedItem) // Send updated blockName
           }
-        }
+        );
 
-        // Update the table with the updated item (including room_number and blockName)
-        updateTableData(updatedItem);
-        // Close the modal
-        handleClick();
-      } else if (blockName === 'Unassigned' && roomNumber !== 'Unassigned') {
-        alert('Please assign a block to the device');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
       }
+
+      // Update the table with the updated item (including room_number and blockName)
+      updateTableData(updatedItem);
+      // Close the modal
+      handleClick();
     } catch (error) {
       console.error('Error updating device:', error);
       alert('Error updating device:', apiError);

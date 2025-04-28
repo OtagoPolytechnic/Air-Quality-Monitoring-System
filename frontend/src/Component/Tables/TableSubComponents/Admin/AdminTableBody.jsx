@@ -3,7 +3,10 @@ import { UpdateButton } from '../../../Sensor/UpdateSensorSubComponents/UpdateBu
 import PopUp from '../../DevicePopUp';
 import TableItem from '../TableItem';
 import { useGetBlockList } from '../../../../Hooks/Blocks/useGetBlockList';
-import { formatDate } from '../../../../utils//dateTime/dateTimeFunctions';
+import {
+  checkOfflineDate,
+  formatDate
+} from '../../../../utils//dateTime/dateTimeFunctions';
 
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
@@ -33,6 +36,9 @@ const AdminTableBody = ({ tableFields, updateTableData }) => {
             <TableItem item={item.room_number} />
             <TableItem item={item.blockName} />
             <TableItem item={formatDate(item.lastSeen)} />
+            <TableItem
+              item={checkOfflineDate(item.lastSeen) ? 'Offline' : 'Online'}
+            />
             <td className="text-right pr-2 py-2 flex justify-end">
               <UpdateButton
                 text="Edit"

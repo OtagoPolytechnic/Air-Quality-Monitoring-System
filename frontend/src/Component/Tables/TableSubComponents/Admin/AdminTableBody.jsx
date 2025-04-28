@@ -30,10 +30,8 @@ const AdminTableBody = ({ tableFields, updateTableData }) => {
     <>
       <tbody className="bg-white divide-y divide-gray-200">
         {tableFields.map((item) => (
-          <tr key={item.id} className="hover:bg-gray-100">
-            <div className="p-2">
-              <TableItem item={item.deviceId} />
-            </div>
+          <tr key={item.id} className="hover:bg-gray-200 odd:bg-gray-50">
+            <TableItem item={item.deviceId} />
             <TableItem item={item.dev_eui} />
             <TableItem item={item.room_number} />
             <TableItem item={item.blockName} />

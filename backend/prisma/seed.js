@@ -6,79 +6,89 @@ import seedBlocks from './seedBlocks.json' assert { type: 'json' };
 const prisma = new PrismaClient();
 
 const main = async () => {
+  const isDevEnv = process.env.NODE_ENV === 'development';
+  const isLocalDb = process.env.DATABASE_URL?.includes('localhost');
+
+  if (!isDevEnv || !isLocalDb) {
+    console.warn('Seeding aborted: Not in a safe development environment.');
+    process.exit(1);
+  }
+
   try {
-    for (let i = 0; i < seedBlocks.data.length; i++) {
-      const blockSeed = seedBlocks.data[i];
-      const existingBlocks = await prisma.block.findFirst({
-        where: {
-          OR: [
-            {
-              blockName: seedBlocks.data[i].blockName,
-            },
-          ],
-        },
+    // Seed blocks
+    for (const blockSeed of seedBlocks.data) {
+      const existingBlock = await prisma.block.findFirst({
+        where: { blockName: blockSeed.blockName },
       });
 
-      if (!existingBlocks) {
-        const { blockName } = blockSeed;
+      if (!existingBlock) {
         await prisma.block.create({
-          data: {
-            blockName,
-          },
+          data: { blockName: blockSeed.blockName },
         });
-        console.log(`Block ${blockName} seeded`);
+        console.log(`Block ${blockSeed.blockName} seeded`);
       }
     }
 
-    for (let i = 0; i < seedDevices.data.length; i++) {
-      const deviceSeed = seedDevices.data[i];
-      const existingDevices = await prisma.device.findFirst({
+    // Seed devices
+    for (const deviceSeed of seedDevices.data) {
+      const existingDevice = await prisma.device.findFirst({
         where: {
           OR: [
-            {
-              dev_eui: seedDevices.data[i].dev_eui,
-            },
-            {
-              deviceId: seedDevices.data[i].deviceId,
-            },
+            { dev_eui: deviceSeed.dev_eui },
+            { deviceId: deviceSeed.deviceId },
           ],
         },
       });
 
-      if (!existingDevices) {
-        const { room_number, deviceId, dev_eui, blockId } = deviceSeed;
-        console.log(blockId);
+      if (!existingDevice) {
+        const parentBlock = await prisma.block.findFirst({
+          where: { blockName: deviceSeed.blockName },
+        });
+
+        if (!parentBlock) {
+          console.warn(`Skipping device ${deviceSeed.deviceId} - block not found`);
+          continue;
+        }
+
         await prisma.device.create({
           data: {
-            room_number,
-            deviceId,
-            dev_eui,
-            blockId,
+            room_number: deviceSeed.room_number,
+            deviceId: deviceSeed.deviceId,
+            dev_eui: deviceSeed.dev_eui,
+            blockId: parentBlock.id,
           },
         });
 
-        console.log(`Device ${deviceId} seeded`);
+        console.log(`Device ${deviceSeed.deviceId} seeded`);
       }
     }
 
-    for (let i = 0; i < seedSensorData.data.length; i++) {
-      const sensorSeed = seedSensorData.data[i];
-
-      const { co2, temperature, deviceId, dev_eui } = sensorSeed;
-      await prisma.sensorData.create({
-        data: {
-          co2,
-          temperature,
-          deviceId,
-          dev_eui,
+    // Seed sensor data
+    for (const sensorSeed of seedSensorData.data) {
+      const existingSensor = await prisma.sensorData.findFirst({
+        where: {
+          deviceId: sensorSeed.deviceId,
+          createdAt: new Date(sensorSeed.createdAt),
         },
       });
-      console.log(`Sensor Data ${deviceId} seeded`);
+
+      if (!existingSensor) {
+        await prisma.sensorData.create({
+          data: {
+            co2: sensorSeed.co2,
+            temperature: sensorSeed.temperature,
+            deviceId: sensorSeed.deviceId,
+            dev_eui: sensorSeed.dev_eui,
+            createdAt: new Date(sensorSeed.createdAt),
+          },
+        });
+        console.log(`Sensor data for ${sensorSeed.deviceId} at ${sensorSeed.createdAt} seeded`);
+      }
     }
 
     await prisma.$disconnect();
   } catch (error) {
-    console.error('Error seeding', error);
+    console.error('Error seeding:', error);
     await prisma.$disconnect();
     process.exit(1);
   }

@@ -24,7 +24,7 @@ export const PopUp = ({
     resetUpdateSuccess,
     updateSuccess,
     apiError
-  } = useAddLocationToDevice(`${apiKey}/api/v1`);
+  } = useAddLocationToDevice(`${apiKey}/api/v1/devices`);
   const [formError, setFormError] = useState('');
   const disabled = actionType === 'edit';
   const modalTitle = actionType === 'add' ? 'Add Device' : 'Edit Device';
@@ -42,22 +42,31 @@ export const PopUp = ({
         blockName: blockName
       };
 
-      if (blockName === 'Unassigned' && roomNumber !== 'Unassigned') return;
+      if (blockName === 'Unassigned' && roomNumber !== 'Unassigned') {
+        setFormError("Must assign block or set room as 'Unassigned'");
+        return;
+      }
 
       if (item.room_number !== roomNumber || item.blockName !== blockName) {
-        updateDeviceLocationRequest(updatedItem, deviceId);
-        if (!response.ok) {
+        await updateDeviceLocationRequest(updatedItem, deviceEUI);
+        if (apiError) {
           throw new Error('Network response was not ok');
+        }
+        if (updateSuccess) updateTableData(updatedItem);
+        else {
+          setFormError('Error updating device');
         }
       }
 
-      // Update the table with the updated item (including room_number and blockName)
-      updateTableData(updatedItem);
-      // Close the modal
-      handleClick();
     } catch (error) {
       console.error('Error updating device:', error);
-      alert('Error updating device:', apiError);
+      alert('Error updating device:', error.message);
+    } finally {
+      setTimeout(() => {
+        handleClick();
+        resetUpdateSuccess();
+        resetApiError();
+      }, 3000);
     }
   };
 
@@ -86,8 +95,8 @@ export const PopUp = ({
                     // id="deviceId"
                     // name="deviceId"
                     placeholder={item?.deviceId || 'Enter name'}
-                    value={deviceId} // Controlled input
-                    onChange={(e) => setDeviceId(e.target.value)} // Update state
+                    value={deviceId} 
+                    onChange={(e) => setDeviceId(e.target.value)} 
                     className="p-2 pl-3 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
                   />
                 </div>
@@ -153,7 +162,7 @@ export const PopUp = ({
               </div>
               {blockName === 'Unassigned' && roomNumber !== 'Unassigned' && (
                 <div className="rounded-lg p-1.5 text-red-600 italic">
-                  <p className="text-sm font-semibold">Must assign block</p>
+                  <p className="text-sm font-semibold">Must assign block or set room as "Unassigned"</p>
                 </div>
               )}
               <div>
@@ -194,11 +203,11 @@ export const PopUp = ({
                 onClick={handleClick} // Close button
                 text="Cancel"
               />
-            </div>
-            {/* <UpdateFieldResponse
+            <p
               styles={`${formError || apiError ? 'text-red-500' : 'text-green-500'} mr-2 text-center`}
               text={updateSuccess || formError || apiError}
-            /> */}
+            />
+            </div>
           </form>
         </div>
       </div>

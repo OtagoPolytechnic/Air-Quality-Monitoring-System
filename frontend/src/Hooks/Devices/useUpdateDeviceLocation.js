@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
 
 export const useAddLocationToDevice = (apiKey) => {
-  const [device, setDevice] = useState({});
+  const [devices, setDevices] = useState({});
   const [apiError, setApiError] = useState('');
-  const [updateSuccess, setUpdateSuccess] = useState('');
+  const [updateSuccess, setUpdateSuccess] = useState("");
 
   const resetApiError = () => {
     setApiError('');
   };
 
   const resetUpdateSuccess = () => {
-    setUpdateSuccess('');
+    setUpdateSuccess("");
   };
 
-  const updateDeviceLocationRequest = async (newLocation, deviceId) => {
+  const updateDeviceLocationRequest = async (newLocation, deviceEUI) => {
     try {
-      const newBlock = await fetch(`${apiKey}/addBlock/${deviceId}`, {
+      const newBlock = await fetch(`${apiKey}/addBlock/${deviceEUI}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -25,11 +25,7 @@ export const useAddLocationToDevice = (apiKey) => {
 
       const blockJson = await newBlock.json();
 
-      if (blockJson.statusCode === 200) {
-        return setUpdateSuccess(blockJson.message);
-      }
-
-      const newRoom = await fetch(`${apiKey}/devices/${deviceId}`, {
+      const newRoom = await fetch(`${apiKey}/${deviceEUI}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -39,43 +35,42 @@ export const useAddLocationToDevice = (apiKey) => {
 
       const roomJson = await newRoom.json();
 
-      if (roomJson.statusCode === 200) {
-        return setUpdateSuccess(roomJson.message);
+      if (roomJson.statusCode === 200 && blockJson.statusCode === 200) {
+        setUpdateSuccess("Device location updated successfully");
+      }
+      else if (roomJson.statusCode !== 200) {
+        setApiError(roomJson.message);
       } else {
-        if (roomJson.statusCode !== 200) {
-          setApiError(roomJson.message);
-        } else {
-          setApiError(blockJson.message);
-        }
+        setApiError(blockJson.message);
       }
     } catch (error) {
       setApiError(error.message);
     }
   };
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(apiKey);
-      const data = await response.json();
-      const mappedData = data.data.map((item) => {
-        return {
-          id: item.id,
-          blockName: item.blockName,
-          room_number: item.room_number
-        };
-      });
-      setDevice(mappedData);
-    } catch (error) {
-      setApiError(error);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(apiKey);
+        const data = await response.json();
+        const mappedData = data.data.map((item) => {
+          return {
+            dev_eui: item.dev_eui,
+            blockName: item.blockName,
+            room_number: item.room_number
+          };
+        });
+        setDevices(mappedData);
+      } catch (error) {
+        setApiError(error);
+      }
+    };
+
     fetchData();
   }, []);
 
   return {
-    device,
+    devices,
     apiError,
     updateSuccess,
     resetApiError,

@@ -136,7 +136,7 @@ const updateDeviceRoom = async (req, res) => {
 
     const updatedRoomNumber = await prisma.device.update({
       where: { dev_eui: String(dev_eui) },
-      data: { room_number },
+      data: { room_number: room_number },
     });
 
     return res.status(STATUS_CODES.OK).json({

@@ -1,60 +1,53 @@
 {
   "data": [
     {
-      "id": 1,
       "room_number": "D200",
       "deviceId": "eui-1000024b080301f5",
       "dev_eui": "1000024b080301f5",
       "createdAt": "2021-06-02T09:00:00.000Z",
-      "blockId": 1
+      "blockName": "D-Block"
     },
     {
-      "id": 2,
       "room_number": "D201",
       "deviceId": "eui-2000024b080301f5",
       "dev_eui": "2000024b080301f5",
       "createdAt": "2021-06-02T09:00:00.000Z",
-      "blockId": 1
+      "blockName": "D-Block"
     },
     {
-      "id": 3,
       "room_number": "D202",
       "deviceId": "eui-3000024b080301f5",
       "dev_eui": "3000024b080301f5",
       "createdAt": "2021-06-02T09:00:00.000Z",
-      "blockId": 1
+      "blockName": "D-Block"
     },
     {
-      "id": 4,
       "room_number": "D203",
       "deviceId": "eui-4000024b080301f5",
       "dev_eui": "4000024b080301f5",
       "createdAt": "2021-06-02T09:00:00.000Z",
-      "blockId": 1
+      "blockName": "D-Block"
     },
     {
-      "id": 5,
       "room_number": "D204",
       "deviceId": "eui-5000024b080301f5",
       "dev_eui": "5000024b080301f5",
       "createdAt": "2021-06-02T09:00:00.000Z",
-      "blockId": 1
+      "blockName": "D-Block"
     },
     {
-      "id": 6,
       "room_number": "D205",
       "deviceId": "eui-324b080301f5",
       "dev_eui": "324b080301f5",
       "createdAt": "2021-06-02T09:00:00.000Z",
-      "blockId": 1
+      "blockName": "D-Block"
     },
     {
-      "id": 7,
       "room_number": "D207",
       "deviceId": "eui-324b080301f5",
       "dev_eui": "324b080301f5",
       "createdAt": "2021-06-02T09:00:00.000Z",
-      "blockId": 1
+      "blockName": "D-Block"
     }
   ]
 }

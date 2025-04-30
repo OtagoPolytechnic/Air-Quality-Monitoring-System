@@ -24,7 +24,7 @@ export const QuickFilter = ({ onFilterChange }) => {
     yesterday.setDate(now.getDate() - 1);
     const startDate = yesterday.toISOString();
     const endDate = now.toISOString();
-    onFilterChange({ startDate, endDate });
+    onFilterChange({ startDate, endDate, viewType: "hourly" });
     setActiveFilter("Last 24 hours");
   };
 
@@ -33,7 +33,7 @@ export const QuickFilter = ({ onFilterChange }) => {
     const now = new Date();
     const startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0).toISOString();
     const endDate = now.toISOString();
-    onFilterChange({ startDate, endDate });
+    onFilterChange({ startDate, endDate, viewType: "hourly" });
     setActiveFilter("Today");
   };
  
@@ -43,7 +43,7 @@ export const QuickFilter = ({ onFilterChange }) => {
     sevenDaysAgo.setDate(today.getDate() - 6);
     const startDate = sevenDaysAgo.toISOString().split("T")[0];
     const endDate = new Date().toISOString().split("T")[0];
-    onFilterChange({ startDate, endDate });
+    onFilterChange({ startDate, endDate, viewType: "daily" });
     setActiveFilter("Week");
   };
 
@@ -53,7 +53,7 @@ export const QuickFilter = ({ onFilterChange }) => {
     aMonthAgo.setDate(date.getDate() - 30);
     const startDate = aMonthAgo.toISOString().split("T")[0];
     const endDate = new Date().toISOString().split("T")[0];
-    onFilterChange({ startDate, endDate });
+    onFilterChange({ startDate, endDate, viewType: "daily" });
     setActiveFilter("Month");
   };
 

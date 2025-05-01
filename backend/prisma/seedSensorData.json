@@ -1,60 +1,1306 @@
 {
   "data": [
     {
-      "id": 1,
-      "co2": "250",
-      "temperature": "19",
-      "createdAt": "2024-03-28T06:53:20.565Z",
+      "co2": "595.42",
+      "temperature": "19.94",
+      "createdAt": "2024-04-21T08:00:00Z",
       "deviceId": "eui-1000024b080301f5",
       "dev_eui": "1000024b080301f5"
     },
     {
-      "id": 2,
-      "co2": "999",
-      "temperature": "30",
-      "createdAt": "2024-05-22T06:53:20.565Z",
-      "deviceId": "eui-2000024b080301f5",
-      "dev_eui": "2000024b080301f5"
+      "co2": "1072.11",
+      "temperature": "21.11",
+      "createdAt": "2024-04-21T08:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
     },
     {
-      "id": 3,
-      "co2": "400",
-      "temperature": "19",
-      "createdAt": "2024-03-28T06:48:18.479Z",
-      "deviceId": "eui-3000024b080301f5",
-      "dev_eui": "3000024b080301f5"
+      "co2": "1080.87",
+      "temperature": "22.45",
+      "createdAt": "2024-04-21T08:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
     },
     {
-      "id": 4,
-      "co2": "850",
-      "temperature": "22",
-      "createdAt": "2024-03-28T06:48:18.479Z",
-      "deviceId": "eui-4000024b080301f5",
-      "dev_eui": "4000024b080301f5"
+      "co2": "911.19",
+      "temperature": "23.26",
+      "createdAt": "2024-04-21T08:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
     },
     {
-      "id": 5,
-      "co2": "300",
-      "temperature": "19",
-      "createdAt": "2024-01-01T06:48:18.479Z",
-      "deviceId": "eui-5000024b080301f5",
-      "dev_eui": "5000024b080301f5"
+      "co2": "854.48",
+      "temperature": "19.3",
+      "createdAt": "2024-04-21T08:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
     },
     {
-      "id": 6,
-      "co2": "200",
-      "temperature": "19",
-      "createdAt": "2024-01-01T06:48:18.479Z",
-      "deviceId": "eui-324b080301f5",
-      "dev_eui": "324b080301f5"
+      "co2": "742.5",
+      "temperature": "22.62",
+      "createdAt": "2024-04-21T08:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
     },
     {
-      "id": 6,
-      "co2": "200",
-      "temperature": "19.55",
-      "createdAt": "2024-01-01T06:48:18.479Z",
-      "deviceId": "eui-324b080301f5",
-      "dev_eui": "324b080301f5"
+      "co2": "1056.45",
+      "temperature": "21.8",
+      "createdAt": "2024-04-21T08:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "493.39",
+      "temperature": "20.07",
+      "createdAt": "2024-04-21T08:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1079.42",
+      "temperature": "22.72",
+      "createdAt": "2024-04-21T08:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1008.06",
+      "temperature": "23.11",
+      "createdAt": "2024-04-21T08:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "648.25",
+      "temperature": "22.9",
+      "createdAt": "2024-04-21T08:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "707.06",
+      "temperature": "23.33",
+      "createdAt": "2024-04-21T08:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1198.92",
+      "temperature": "20.06",
+      "createdAt": "2024-04-21T09:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1037.41",
+      "temperature": "20.19",
+      "createdAt": "2024-04-21T09:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "786.73",
+      "temperature": "21.99",
+      "createdAt": "2024-04-21T09:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "733.35",
+      "temperature": "21.27",
+      "createdAt": "2024-04-21T09:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "614.21",
+      "temperature": "21.3",
+      "createdAt": "2024-04-21T09:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "533.98",
+      "temperature": "21.43",
+      "createdAt": "2024-04-21T09:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "796.6",
+      "temperature": "19.67",
+      "createdAt": "2024-04-21T09:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "630.71",
+      "temperature": "21.62",
+      "createdAt": "2024-04-21T09:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "881.27",
+      "temperature": "22.49",
+      "createdAt": "2024-04-21T09:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "878.84",
+      "temperature": "22.77",
+      "createdAt": "2024-04-21T09:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "471.58",
+      "temperature": "21.17",
+      "createdAt": "2024-04-21T09:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "499.96",
+      "temperature": "21.73",
+      "createdAt": "2024-04-21T09:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1229.03",
+      "temperature": "21.1",
+      "createdAt": "2024-04-21T10:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "829.07",
+      "temperature": "23.14",
+      "createdAt": "2024-04-21T10:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "615.3",
+      "temperature": "21.27",
+      "createdAt": "2024-04-21T10:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "742.43",
+      "temperature": "20.35",
+      "createdAt": "2024-04-21T10:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "710.71",
+      "temperature": "22.84",
+      "createdAt": "2024-04-21T10:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1222.62",
+      "temperature": "19.62",
+      "createdAt": "2024-04-21T10:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1118.34",
+      "temperature": "21.19",
+      "createdAt": "2024-04-21T10:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1099.42",
+      "temperature": "22.05",
+      "createdAt": "2024-04-21T10:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1203.92",
+      "temperature": "22.29",
+      "createdAt": "2024-04-21T10:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "938.82",
+      "temperature": "20.12",
+      "createdAt": "2024-04-21T10:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1106.11",
+      "temperature": "20.22",
+      "createdAt": "2024-04-21T10:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "476.94",
+      "temperature": "19.97",
+      "createdAt": "2024-04-21T10:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "471.58",
+      "temperature": "20.28",
+      "createdAt": "2024-04-21T11:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1181.52",
+      "temperature": "22.06",
+      "createdAt": "2024-04-21T11:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "483.42",
+      "temperature": "21.14",
+      "createdAt": "2024-04-21T11:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "859.77",
+      "temperature": "22.65",
+      "createdAt": "2024-04-21T11:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "989.76",
+      "temperature": "23.49",
+      "createdAt": "2024-04-21T11:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "818.97",
+      "temperature": "21.68",
+      "createdAt": "2024-04-21T11:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "716.41",
+      "temperature": "19.63",
+      "createdAt": "2024-04-21T11:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "587.38",
+      "temperature": "19.3",
+      "createdAt": "2024-04-21T11:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "936.39",
+      "temperature": "22.43",
+      "createdAt": "2024-04-21T11:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "851.98",
+      "temperature": "20.46",
+      "createdAt": "2024-04-21T11:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1147.96",
+      "temperature": "22.65",
+      "createdAt": "2024-04-21T11:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "805.25",
+      "temperature": "21.61",
+      "createdAt": "2024-04-21T11:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "847.0",
+      "temperature": "19.32",
+      "createdAt": "2024-04-21T12:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "611.56",
+      "temperature": "21.6",
+      "createdAt": "2024-04-21T12:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "590.01",
+      "temperature": "19.61",
+      "createdAt": "2024-04-21T12:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "915.46",
+      "temperature": "21.53",
+      "createdAt": "2024-04-21T12:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "667.68",
+      "temperature": "21.68",
+      "createdAt": "2024-04-21T12:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "608.78",
+      "temperature": "23.26",
+      "createdAt": "2024-04-21T12:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1107.78",
+      "temperature": "22.16",
+      "createdAt": "2024-04-21T12:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "829.68",
+      "temperature": "19.1",
+      "createdAt": "2024-04-21T12:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1015.92",
+      "temperature": "19.37",
+      "createdAt": "2024-04-21T12:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1225.66",
+      "temperature": "19.95",
+      "createdAt": "2024-04-21T12:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1200.5",
+      "temperature": "19.52",
+      "createdAt": "2024-04-21T12:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "876.57",
+      "temperature": "21.67",
+      "createdAt": "2024-04-21T12:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "466.2",
+      "temperature": "19.34",
+      "createdAt": "2024-04-21T13:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "908.78",
+      "temperature": "21.81",
+      "createdAt": "2024-04-21T13:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "741.8",
+      "temperature": "20.43",
+      "createdAt": "2024-04-21T13:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1001.66",
+      "temperature": "23.44",
+      "createdAt": "2024-04-21T13:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "955.64",
+      "temperature": "21.3",
+      "createdAt": "2024-04-21T13:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "669.29",
+      "temperature": "19.12",
+      "createdAt": "2024-04-21T13:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "704.2",
+      "temperature": "20.33",
+      "createdAt": "2024-04-21T13:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "957.54",
+      "temperature": "20.29",
+      "createdAt": "2024-04-21T13:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "926.38",
+      "temperature": "23.34",
+      "createdAt": "2024-04-21T13:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "898.33",
+      "temperature": "20.37",
+      "createdAt": "2024-04-21T13:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "497.14",
+      "temperature": "19.16",
+      "createdAt": "2024-04-21T13:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "509.15",
+      "temperature": "19.21",
+      "createdAt": "2024-04-21T13:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "560.0",
+      "temperature": "20.23",
+      "createdAt": "2024-04-21T14:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "457.21",
+      "temperature": "20.64",
+      "createdAt": "2024-04-21T14:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "719.33",
+      "temperature": "21.48",
+      "createdAt": "2024-04-21T14:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "586.38",
+      "temperature": "23.4",
+      "createdAt": "2024-04-21T14:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "577.8",
+      "temperature": "22.71",
+      "createdAt": "2024-04-21T14:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "569.41",
+      "temperature": "19.98",
+      "createdAt": "2024-04-21T14:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "905.08",
+      "temperature": "20.68",
+      "createdAt": "2024-04-21T14:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "787.91",
+      "temperature": "20.67",
+      "createdAt": "2024-04-21T14:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1218.96",
+      "temperature": "20.83",
+      "createdAt": "2024-04-21T14:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "923.2",
+      "temperature": "20.0",
+      "createdAt": "2024-04-21T14:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "977.71",
+      "temperature": "19.75",
+      "createdAt": "2024-04-21T14:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "464.05",
+      "temperature": "21.7",
+      "createdAt": "2024-04-21T14:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "775.4",
+      "temperature": "20.97",
+      "createdAt": "2024-04-21T15:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "984.31",
+      "temperature": "22.59",
+      "createdAt": "2024-04-21T15:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "962.3",
+      "temperature": "20.72",
+      "createdAt": "2024-04-21T15:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "522.11",
+      "temperature": "19.75",
+      "createdAt": "2024-04-21T15:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1075.89",
+      "temperature": "22.84",
+      "createdAt": "2024-04-21T15:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "931.13",
+      "temperature": "19.98",
+      "createdAt": "2024-04-21T15:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "922.47",
+      "temperature": "20.24",
+      "createdAt": "2024-04-21T15:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "576.33",
+      "temperature": "22.47",
+      "createdAt": "2024-04-21T15:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "809.22",
+      "temperature": "21.46",
+      "createdAt": "2024-04-21T15:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1126.07",
+      "temperature": "20.83",
+      "createdAt": "2024-04-21T15:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "474.52",
+      "temperature": "21.94",
+      "createdAt": "2024-04-21T15:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "489.4",
+      "temperature": "19.59",
+      "createdAt": "2024-04-21T15:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1046.29",
+      "temperature": "23.37",
+      "createdAt": "2024-04-21T16:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "624.28",
+      "temperature": "22.58",
+      "createdAt": "2024-04-21T16:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1132.07",
+      "temperature": "20.48",
+      "createdAt": "2024-04-21T16:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1096.02",
+      "temperature": "21.23",
+      "createdAt": "2024-04-21T16:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "675.08",
+      "temperature": "19.12",
+      "createdAt": "2024-04-21T16:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "766.54",
+      "temperature": "20.25",
+      "createdAt": "2024-04-21T16:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1235.55",
+      "temperature": "19.61",
+      "createdAt": "2024-04-21T16:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1177.72",
+      "temperature": "23.09",
+      "createdAt": "2024-04-21T16:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "633.08",
+      "temperature": "20.57",
+      "createdAt": "2024-04-21T16:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1222.74",
+      "temperature": "22.92",
+      "createdAt": "2024-04-21T16:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "906.63",
+      "temperature": "22.11",
+      "createdAt": "2024-04-21T16:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "699.75",
+      "temperature": "20.94",
+      "createdAt": "2024-04-21T16:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "699.34",
+      "temperature": "20.6",
+      "createdAt": "2024-04-21T17:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1063.58",
+      "temperature": "21.29",
+      "createdAt": "2024-04-21T17:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1042.33",
+      "temperature": "19.44",
+      "createdAt": "2024-04-21T17:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1201.13",
+      "temperature": "20.01",
+      "createdAt": "2024-04-21T17:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "534.35",
+      "temperature": "23.03",
+      "createdAt": "2024-04-21T17:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1122.31",
+      "temperature": "22.29",
+      "createdAt": "2024-04-21T17:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "541.57",
+      "temperature": "19.76",
+      "createdAt": "2024-04-21T17:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "498.1",
+      "temperature": "23.04",
+      "createdAt": "2024-04-21T17:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "521.04",
+      "temperature": "20.41",
+      "createdAt": "2024-04-21T17:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1071.86",
+      "temperature": "21.55",
+      "createdAt": "2024-04-21T17:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "864.27",
+      "temperature": "21.81",
+      "createdAt": "2024-04-21T17:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "533.69",
+      "temperature": "19.1",
+      "createdAt": "2024-04-21T17:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1099.83",
+      "temperature": "19.72",
+      "createdAt": "2024-04-22T08:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "668.34",
+      "temperature": "21.96",
+      "createdAt": "2024-04-22T08:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1139.97",
+      "temperature": "22.83",
+      "createdAt": "2024-04-22T08:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "690.75",
+      "temperature": "23.45",
+      "createdAt": "2024-04-22T08:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "711.04",
+      "temperature": "20.53",
+      "createdAt": "2024-04-22T08:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "574.92",
+      "temperature": "22.57",
+      "createdAt": "2024-04-22T08:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "919.83",
+      "temperature": "21.63",
+      "createdAt": "2024-04-22T08:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1031.17",
+      "temperature": "20.8",
+      "createdAt": "2024-04-22T08:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "891.27",
+      "temperature": "19.63",
+      "createdAt": "2024-04-22T08:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "659.83",
+      "temperature": "22.49",
+      "createdAt": "2024-04-22T08:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "519.88",
+      "temperature": "20.36",
+      "createdAt": "2024-04-22T08:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1205.13",
+      "temperature": "21.05",
+      "createdAt": "2024-04-22T08:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1112.96",
+      "temperature": "22.01",
+      "createdAt": "2024-04-22T09:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1167.06",
+      "temperature": "23.14",
+      "createdAt": "2024-04-22T09:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "528.61",
+      "temperature": "21.32",
+      "createdAt": "2024-04-22T09:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "807.3",
+      "temperature": "22.78",
+      "createdAt": "2024-04-22T09:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "859.59",
+      "temperature": "22.53",
+      "createdAt": "2024-04-22T09:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1037.79",
+      "temperature": "20.89",
+      "createdAt": "2024-04-22T09:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1158.15",
+      "temperature": "20.32",
+      "createdAt": "2024-04-22T09:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "787.47",
+      "temperature": "19.02",
+      "createdAt": "2024-04-22T09:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "570.43",
+      "temperature": "20.1",
+      "createdAt": "2024-04-22T09:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "939.6",
+      "temperature": "19.25",
+      "createdAt": "2024-04-22T09:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1145.96",
+      "temperature": "23.28",
+      "createdAt": "2024-04-22T09:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "559.61",
+      "temperature": "21.67",
+      "createdAt": "2024-04-22T09:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1048.4",
+      "temperature": "22.27",
+      "createdAt": "2024-04-22T10:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "853.4",
+      "temperature": "21.93",
+      "createdAt": "2024-04-22T10:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "678.04",
+      "temperature": "19.28",
+      "createdAt": "2024-04-22T10:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "623.26",
+      "temperature": "19.76",
+      "createdAt": "2024-04-22T10:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "643.36",
+      "temperature": "21.54",
+      "createdAt": "2024-04-22T10:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "884.63",
+      "temperature": "22.47",
+      "createdAt": "2024-04-22T10:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "925.85",
+      "temperature": "19.12",
+      "createdAt": "2024-04-22T10:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "688.46",
+      "temperature": "22.64",
+      "createdAt": "2024-04-22T10:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1022.85",
+      "temperature": "20.65",
+      "createdAt": "2024-04-22T10:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "711.97",
+      "temperature": "21.61",
+      "createdAt": "2024-04-22T10:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "781.37",
+      "temperature": "20.1",
+      "createdAt": "2024-04-22T10:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "537.77",
+      "temperature": "20.78",
+      "createdAt": "2024-04-22T10:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "988.52",
+      "temperature": "21.53",
+      "createdAt": "2024-04-22T11:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "628.38",
+      "temperature": "21.57",
+      "createdAt": "2024-04-22T11:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "804.17",
+      "temperature": "19.35",
+      "createdAt": "2024-04-22T11:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "502.87",
+      "temperature": "21.73",
+      "createdAt": "2024-04-22T11:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1018.88",
+      "temperature": "22.54",
+      "createdAt": "2024-04-22T11:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "981.77",
+      "temperature": "23.32",
+      "createdAt": "2024-04-22T11:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "848.28",
+      "temperature": "20.98",
+      "createdAt": "2024-04-22T11:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1006.52",
+      "temperature": "19.87",
+      "createdAt": "2024-04-22T11:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "915.03",
+      "temperature": "21.48",
+      "createdAt": "2024-04-22T11:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "481.05",
+      "temperature": "21.86",
+      "createdAt": "2024-04-22T11:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1142.69",
+      "temperature": "19.58",
+      "createdAt": "2024-04-22T11:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "569.15",
+      "temperature": "22.54",
+      "createdAt": "2024-04-22T11:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1013.81",
+      "temperature": "22.18",
+      "createdAt": "2024-04-22T12:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1067.67",
+      "temperature": "21.14",
+      "createdAt": "2024-04-22T12:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1012.76",
+      "temperature": "22.55",
+      "createdAt": "2024-04-22T12:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "951.76",
+      "temperature": "21.7",
+      "createdAt": "2024-04-22T12:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "952.99",
+      "temperature": "20.75",
+      "createdAt": "2024-04-22T12:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1009.99",
+      "temperature": "22.45",
+      "createdAt": "2024-04-22T12:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "845.39",
+      "temperature": "20.2",
+      "createdAt": "2024-04-22T12:30:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1180.99",
+      "temperature": "19.81",
+      "createdAt": "2024-04-22T12:35:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "466.72",
+      "temperature": "22.45",
+      "createdAt": "2024-04-22T12:40:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "671.57",
+      "temperature": "21.5",
+      "createdAt": "2024-04-22T12:45:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1125.01",
+      "temperature": "21.68",
+      "createdAt": "2024-04-22T12:50:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "515.87",
+      "temperature": "19.16",
+      "createdAt": "2024-04-22T12:55:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "856.94",
+      "temperature": "20.45",
+      "createdAt": "2024-04-22T13:00:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "577.28",
+      "temperature": "19.57",
+      "createdAt": "2024-04-22T13:05:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1156.14",
+      "temperature": "21.58",
+      "createdAt": "2024-04-22T13:10:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "755.15",
+      "temperature": "19.95",
+      "createdAt": "2024-04-22T13:15:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "781.77",
+      "temperature": "22.74",
+      "createdAt": "2024-04-22T13:20:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
+    },
+    {
+      "co2": "1237.42",
+      "temperature": "22.86",
+      "createdAt": "2024-04-22T13:25:00Z",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5"
     }
   ]
 }

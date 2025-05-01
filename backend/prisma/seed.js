@@ -7,88 +7,97 @@ const prisma = new PrismaClient();
 
 const main = async () => {
   const isDevEnv = process.env.NODE_ENV === 'development';
-  const isLocalDb = process.env.DATABASE_URL?.includes('localhost');
-
+  const isLocalDb = process.env.DATABASE_URL?.includes('localhost') || process.env.DATABASE_URL?.includes('127.0.0.1');
+  
   if (!isDevEnv || !isLocalDb) {
     console.warn('Seeding aborted: Not in a safe development environment.');
     process.exit(1);
   }
-
+  
   try {
-    // Seed blocks
-    for (const blockSeed of seedBlocks.data) {
-      const existingBlock = await prisma.block.findFirst({
-        where: { blockName: blockSeed.blockName },
-      });
 
-      if (!existingBlock) {
-        await prisma.block.create({
-          data: { blockName: blockSeed.blockName },
-        });
-        console.log(`Block ${blockSeed.blockName} seeded`);
-      }
+    const existingBlock = await prisma.block.findFirst();
+    if (existingBlock) {
+      console.log('Clearing existing data...');
+      await prisma.sensorData.deleteMany();
+      await prisma.device.deleteMany();
+      await prisma.block.deleteMany();
+      console.log('Old data deleted.');
     }
 
-    // Seed devices
-    for (const deviceSeed of seedDevices.data) {
-      const existingDevice = await prisma.device.findFirst({
+    // Seed blocks
+    for (let i = 0; i < seedBlocks.data.length; i++) {
+      const blockSeed = seedBlocks.data[i];
+      const existingBlocks = await prisma.block.findFirst({
         where: {
           OR: [
-            { dev_eui: deviceSeed.dev_eui },
-            { deviceId: deviceSeed.deviceId },
+            {
+              blockName: seedBlocks.data[i].blockName,
+            },
           ],
         },
       });
 
-      if (!existingDevice) {
-        const parentBlock = await prisma.block.findFirst({
-          where: { blockName: deviceSeed.blockName },
+      if (!existingBlocks) {
+        const { blockName } = blockSeed;
+        await prisma.block.create({
+          data: {
+            blockName,
+          },
         });
+        console.log(`Block ${blockName} seeded`);
+      }
+    }
 
-        if (!parentBlock) {
-          console.warn(`Skipping device ${deviceSeed.deviceId} - block not found`);
-          continue;
-        }
+    // Seed devices
+    for (let i = 0; i < seedDevices.data.length; i++) {
+      const deviceSeed = seedDevices.data[i];
+      const existingDevices = await prisma.device.findFirst({
+        where: {
+          OR: [
+            {
+              dev_eui: seedDevices.data[i].dev_eui,
+            },
+            {
+              deviceId: seedDevices.data[i].deviceId,
+            },
+          ],
+        },
+      });
 
+      if (!existingDevices) {
+        const { room_number, deviceId, dev_eui, blockId } = deviceSeed;
         await prisma.device.create({
           data: {
-            room_number: deviceSeed.room_number,
-            deviceId: deviceSeed.deviceId,
-            dev_eui: deviceSeed.dev_eui,
-            blockId: parentBlock.id,
+            room_number,
+            deviceId,
+            dev_eui,
+            blockId,
           },
         });
 
-        console.log(`Device ${deviceSeed.deviceId} seeded`);
+        console.log(`Device ${deviceId} seeded`);
       }
     }
 
     // Seed sensor data
-    for (const sensorSeed of seedSensorData.data) {
-      const existingSensor = await prisma.sensorData.findFirst({
-        where: {
-          deviceId: sensorSeed.deviceId,
-          createdAt: new Date(sensorSeed.createdAt),
+    for (let i = 0; i < seedSensorData.data.length; i++) {
+      const sensorSeed = seedSensorData.data[i];
+      const { co2, temperature, deviceId, dev_eui } = sensorSeed;
+      await prisma.sensorData.create({
+        data: {
+          co2,
+          temperature,
+          deviceId,
+          dev_eui,
         },
       });
-
-      if (!existingSensor) {
-        await prisma.sensorData.create({
-          data: {
-            co2: sensorSeed.co2,
-            temperature: sensorSeed.temperature,
-            deviceId: sensorSeed.deviceId,
-            dev_eui: sensorSeed.dev_eui,
-            createdAt: new Date(sensorSeed.createdAt),
-          },
-        });
-        console.log(`Sensor data for ${sensorSeed.deviceId} at ${sensorSeed.createdAt} seeded`);
-      }
+      console.log(`Sensor Data ${deviceId} seeded`);
     }
 
     await prisma.$disconnect();
   } catch (error) {
-    console.error('Error seeding:', error);
+    console.error('Error seeding', error);
     await prisma.$disconnect();
     process.exit(1);
   }

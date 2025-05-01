@@ -20,21 +20,9 @@ export const SensorHistory = ({ dev_eui }) => {
   const [sortedData, setSortedData] = useState([]);
   const [filter, setFilter] = useState({ startDate: null, endDate: null, viewType: 'hourly' });
 
-  const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
-  // Dev fallback to auto-set a time range
-  useEffect(() => {
-    if (import.meta.env.DEV && !filter.startDate && !filter.endDate) {
-      const endDate = new Date("2024-04-28T00:00:00Z");
-      const startDate = new Date("2024-04-21T00:00:00Z");
-      const newFilter = {
-        startDate: startDate.toISOString(),
-        endDate: endDate.toISOString(),
-        viewType: "hourly"
-      };
-      setFilter(newFilter);
-    }
-  }, [filter]);
+  // Get the API key from environment variables
+  const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
   // Fetch sensor data based on selected filter
   useEffect(() => {
@@ -58,11 +46,12 @@ export const SensorHistory = ({ dev_eui }) => {
             setError('An unexpected error occurred.');
           }
         }
-      } catch {
-        setError('Error fetching sensor data.');
+      } catch (error) {
+        console.error('Error fetching devices or CO2 levels:', error);
       }
     };
 
+    // Fetch data only if all filter values are provided
     if (filter.startDate && filter.endDate) {
       fetchHistory();
     }
@@ -72,12 +61,14 @@ export const SensorHistory = ({ dev_eui }) => {
   useEffect(() => {
     if (sensorData && sensorData.data) {
       const sortedSensorData = sensorData.data
-        .filter(d => d.createdAt)
-        .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+  .filter(d => d.createdAt) // skip broken data
+  .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+
       setSortedData(sortedSensorData);
     }
   }, [sensorData]);
 
+  // Custom tooltip component for the chart
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       const { co2, temperature, createdAt } = payload[0].payload;
@@ -94,23 +85,25 @@ export const SensorHistory = ({ dev_eui }) => {
     }
     return null;
   };
+  
 
   const ErrorMessage = () => {
     if (error) {
       return (
         <div
-          className="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+          class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
           data-testid="errormessage"
           role="alert"
         >
-          <p className="text-lg">{error}</p>
+          <p class="text-lg">{error}</p>
         </div>
       );
     }
     return null;
   };
-
+  console.log("Chart data:", sortedData);
   const { viewType } = filter;
+
 
   return (
     <div className="p-8">
@@ -119,10 +112,17 @@ export const SensorHistory = ({ dev_eui }) => {
         data-testid="SensorHistory"
         data-cy="SensorHistory"
       >
-        <h1 className="text-2xl text-center font-bold mb-4" data-testid="SensorHistoryTitle">
+        <h1
+          className="text-2xl text-center font-bold mb-4"
+          data-testid="SensorHistoryTitle"
+        >
           Sensor History
         </h1>
-        <ResponsiveContainer data-testid="rechartsGraph" width="95%" height={400}>
+        <ResponsiveContainer
+          data-testid="rechartsGraph"
+          width="95%"
+          height={400}
+        >
           <LineChart
             data-testid="rechartsGraph"
             width={1000}
@@ -131,15 +131,17 @@ export const SensorHistory = ({ dev_eui }) => {
           >
             <CartesianGrid strokeDasharray="10 5 3 5" />
             <XAxis
-              dataKey="createdAt"
-              tick={<CustomXAxisTick viewType={viewType} color="#000" />}
-              tickLine={false}
-              axisLine={{ stroke: '#ccc' }}
-            />
+  dataKey="createdAt"
+  tick={<CustomXAxisTick viewType={viewType} color="#000" />}
+  tickLine={false}
+  axisLine={{ stroke: '#ccc' }}
+/>
+
+            {/* Tick removes the date below the grid */}
             <YAxis yAxisId="left" type="number" domain={[0, 3000]} />
             <Tooltip data-testid="tooltip" content={<CustomTooltip />} />
             <Legend />
-            <Line yAxisId="left" dataKey="co2" stroke="#8884d8" dot={false} />
+            <Line yAxisId="left" dataKey="co2" fill="#8884d8" dot={false} />
           </LineChart>
         </ResponsiveContainer>
         <ErrorMessage data-cy="errormessage" />

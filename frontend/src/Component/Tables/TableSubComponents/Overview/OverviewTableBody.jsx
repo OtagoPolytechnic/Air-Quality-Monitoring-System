@@ -1,5 +1,11 @@
 import React from 'react';
 import TableItem from '../TableItem';
+import { 
+  getCondition, 
+  getMinutesSinceLastUpdated, 
+  getCO2ColorClass, 
+  getLastUpdatedClass 
+} from '../../../../utils/deviceDataProcessing/deviceProcessingFunctions'; // Import utility functions for data processing
 
 
 const OverviewTableBody = ({ tableFields }) => {
@@ -29,39 +35,6 @@ const OverviewTableBody = ({ tableFields }) => {
       })}
     </tbody>
   );
-};
-
-// Function to determine the condition of CO2 levels on learning from Liz CO2 research
-const getCondition = (co2Level) => {
-  if (!co2Level) return 'No data';
-  if (co2Level < 400) return 'Great learning environment';
-  if (co2Level < 1000) return 'Good learning environment';
-  if (co2Level < 2000) return 'Drowsiness, reduced focus';
-  if (co2Level < 5000) return 'Drowsiness, headaches, poor concentration';
-  return 'Unsafe, inability to learn effectively';
-}
-
-// Function to calculate the minutes since the last update
-const getMinutesSinceLastUpdated = (lastUpdated) => {
-  const currentTime = new Date();
-  const lastUpdatedTime = new Date(lastUpdated);
-  const timeDifference = Math.abs(currentTime - lastUpdatedTime) / (1000 * 60); 
-  return Math.floor(timeDifference);
-};
-
-// Function to determine the color class based on CO2 levels
-const getCO2ColorClass = (co2Level) => {
-  if (!co2Level) return 'text-gray-900';
-  if (co2Level < 1000) return 'text-green-600';
-  if (co2Level < 2000) return 'text-yellow-600';
-  return 'text-red-600';
-};
-
-// Function to determine the color class based on last updated time
-const getLastUpdatedClass = (minutesSinceLastUpdated) => {
-  if (minutesSinceLastUpdated < 10) return 'text-green-600';
-  if (minutesSinceLastUpdated < 15) return 'text-yellow-600';
-  return 'text-red-600';
 };
 
 export default OverviewTableBody;

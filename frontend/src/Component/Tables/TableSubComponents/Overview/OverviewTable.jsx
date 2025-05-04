@@ -2,7 +2,7 @@ import React from 'react';
 import TableHeaders from '../TableHeaders';
 import OverviewTableBody from './OverviewTableBody';
 import useSortableData from '../../../../Hooks/Tables/useSortableTable';
-import { useGetRoomData } from '../../../../Hooks/Overview/useGetRoomData';
+import useGetRoomData from '../../../../Hooks/Overview/useGetRoomData';
 import { tableHeadersOverview } from "../../../../utils/constants/constants";
 
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;

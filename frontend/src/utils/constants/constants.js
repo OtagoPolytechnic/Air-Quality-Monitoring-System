@@ -4,6 +4,13 @@ export const firestoreCollectionUsers = 'users';
 
 export const sensorOfflineTimer = 15;
 
+export const CO2_THRESHOLDS = {
+  EXCELLENT: 400,
+  GOOD: 1000,
+  CONCERNING: 2000,
+  POOR: 5000
+};
+
 export const userRoles = {
   admin: 'admin',
   user: 'user',

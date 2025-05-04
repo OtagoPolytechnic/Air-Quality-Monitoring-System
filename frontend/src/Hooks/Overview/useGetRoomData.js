@@ -49,3 +49,6 @@ export const useGetRoomData = (endpoint, blockName) => { // Endpoint and blockNa
 
   return { rooms, apiError };
 };
+
+// Add default export
+export default useGetRoomData;

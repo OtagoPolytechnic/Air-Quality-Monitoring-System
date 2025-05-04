@@ -27,7 +27,7 @@ const OverviewTableBody = ({ tableFields }) => {
               {item.temperature}°C
             </td>
             <td className="pl-1 py-2">
-              <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${badgeColorClass}`}>
+              <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${badgeColorClass}`}>
                 {condition}
               </span>
             </td>

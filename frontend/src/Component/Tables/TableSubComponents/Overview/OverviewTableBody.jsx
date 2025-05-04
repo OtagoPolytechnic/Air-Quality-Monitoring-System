@@ -19,14 +19,16 @@ const OverviewTableBody = ({ tableFields }) => {
 
         return (
           <tr key={item.dev_eui} className="hover:bg-gray-100 even:bg-gray-50">
-              <TableItem item={item.room_number} />
+              <td className={`pl-1 py-2 font-bold text-black text-lg whitespace-nowrap`}>
+              {item.room_number}
+            </td>
             <td className={`pl-1 py-2 font-medium whitespace-nowrap ${getCO2ColorClass(item.co2Level)}`}>
               {item.co2Level} ppm
             </td>
             <td className={`pl-1 py-2 font-medium whitespace-nowrap ${getTemperatureColorClass(item.temperature)}`}>
               {item.temperature}°C
             </td>
-            <td className="pl-1 py-2">
+            <td className="pl-1 py-2 whitespace-nowrap">
               <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${badgeColorClass}`}>
                 {condition}
               </span>

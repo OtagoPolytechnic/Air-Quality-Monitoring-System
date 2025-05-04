@@ -17,6 +17,8 @@ export const useGetRoomData = (endpoint, blockName) => { // Endpoint and blockNa
 
         if (blockName) {
           // Process data for block-specific endpoint
+          // sensorData '?' to check if the sensorData array exists to catch undefined errors
+          // sensorData || 0 or '' is a fallback value if the data is not available
           processedData = data.data.device.map(device => ({
             room_number: device.room_number,
             dev_eui: device.dev_eui,

@@ -15,9 +15,9 @@ export const getCondition = (co2Level, temperature) => {
   if (!co2Level) {
     co2Text = 'No CO2 data';
   } else if (co2Level < CO2_THRESHOLDS.EXCELLENT) {
-    co2Text = 'Great learning environment';
+    co2Text = 'Great CO2 level';
   } else if (co2Level < CO2_THRESHOLDS.GOOD) {
-    co2Text = 'Good learning environment';
+    co2Text = 'Good CO2 level';
   } else if (co2Level < CO2_THRESHOLDS.CONCERNING) {
     co2Text = 'Drowsiness, reduced focus';
   } else if (co2Level < CO2_THRESHOLDS.POOR) {
@@ -88,3 +88,32 @@ export const getTemperatureColorClass = (temperature) => {
     if (minutesSinceLastUpdated < sensorOfflineTimer) return 'text-green-600';
     return 'text-red-600';
   };
+
+  /**
+ * Determines badge styling based on CO2 and temperature status
+ * @param {number} co2Level - CO2 level in ppm
+ * @param {number} temperature - Temperature in °C
+ * @returns {string} Tailwind CSS classes for badge styling
+ */
+export const getBadgeColorClass = (co2Level, temperature) => {
+  const co2Class = getCO2ColorClass(co2Level);
+  const tempClass = getTemperatureColorClass(temperature);
+  
+  // If either value is red, return red badge
+  if (co2Class.includes('red') || tempClass.includes('red')) {
+    return 'bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500';
+  }
+  
+  // If temp is cold, return blue badge
+  if (tempClass.includes('blue')) {
+    return 'bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500';
+  }
+  
+  // If either value is yellow, return yellow badge
+  if (co2Class.includes('yellow') || tempClass.includes('yellow')) {
+    return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-500';
+  }
+  
+  // Otherwise return green badge
+  return 'bg-green-100 text-green-800 dark:bg-green-800/30 dark:text-green-500';
+};

@@ -11,6 +11,11 @@ export const CO2_THRESHOLDS = {
   POOR: 5000
 };
 
+export const TEMP_THRESHOLDS = {
+  COLD: 18,
+  HOT: 25,
+};
+
 export const userRoles = {
   admin: 'admin',
   user: 'user',

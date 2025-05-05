@@ -4,6 +4,7 @@ import { LoadingSpinner } from '../Spinner/LoadingSpinner';
 import { NavLink, useParams } from 'react-router-dom';
 import { Co2Sensor } from '../Co2/Co2Sensor';
 import { checkOfflineDate } from '../../utils/dateTime/dateTimeFunctions';
+import { getCo2Details, getCo2HoverBgColor } from '../../utils/co2Details/co2Details'
 
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
@@ -50,17 +51,22 @@ useEffect(() => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 px-4">
             {devices.map((device) => (
               <NavLink to={`/${blockName}/${device.room_number}`} key={device.dev_eui} data-cy={device.room_number}>
-                <div className="bg-white rounded-2xl px-4 py-4 shadow-sm border border-gray-200 transition-all duration-300">
-                  <div className="flex items-center justify-between gap-4"> 
-                    <div className="text-left mr-2"> 
-                      <div className="text-5xl text-gray-800 mb-2"> 
-                        Room {device.room_number}
-                      </div>
-                      <div className="text-5xl font-bold text-gray-900"> 
-                        {checkOfflineDate(device.createdAt) ? 0 : device.co2}
-                        <span className="text-2xl text-gray-500 font-normal ml-1">ppm</span> 
-                      </div>
+              <div className={`bg-white rounded-2xl px-4 py-4 shadow-sm border border-gray-200 transition-all duration-300 ${getCo2HoverBgColor(checkOfflineDate(device.createdAt) ? 0 : device.co2)}`}>
+                <div className="flex items-center justify-between gap-4"> 
+                  <div className="text-left mr-2 flex-1"> 
+                    <div className="text-5xl text-gray-800 mb-2">
+                      Room {device.room_number}
                     </div>
+                    <div className="text-5xl font-bold text-gray-900 mb-2"> 
+                      {checkOfflineDate(device.createdAt) ? 0 : device.co2}
+                      <span className="text-2xl text-gray-500 font-normal ml-1">ppm</span> 
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      <div><span className="font-semibold">Symptoms:</span> {getCo2Details(checkOfflineDate(device.createdAt) ? 0 : device.co2).symptoms}</div>
+                      <div><span className="font-semibold">Air Quality:</span> {getCo2Details(checkOfflineDate(device.createdAt) ? 0 : device.co2).airQuality}</div>
+                    </div>
+                  </div>
+
   
                     <div className="flex items-center justify-center ml-2"> 
                       <div className="max-w-[200px] w-full">

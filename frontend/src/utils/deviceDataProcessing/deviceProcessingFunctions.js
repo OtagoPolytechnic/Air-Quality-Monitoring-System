@@ -15,15 +15,15 @@ export const getCondition = (co2Level, temperature) => {
   if (!co2Level) {
     co2Text = 'No CO2 data';
   } else if (co2Level < CO2_THRESHOLDS.EXCELLENT) {
-    co2Text = 'Great CO2 level';
+    co2Text = 'Great air quality';
   } else if (co2Level < CO2_THRESHOLDS.GOOD) {
-    co2Text = 'Good CO2 level';
+    co2Text = 'Good air quality';
   } else if (co2Level < CO2_THRESHOLDS.CONCERNING) {
-    co2Text = 'Drowsiness, reduced focus';
+    co2Text = 'Stuffy';
   } else if (co2Level < CO2_THRESHOLDS.POOR) {
-    co2Text = 'Drowsiness, headaches, poor concentration';
+    co2Text = 'Poor air quality';
   } else {
-    co2Text = 'Unsafe CO2 level, inability to learn effectively';
+    co2Text = 'Unsafe CO2 level';
   }
   
   // Temperature condition
@@ -31,11 +31,11 @@ export const getCondition = (co2Level, temperature) => {
   if (!temperature) {
     tempText = 'No temperature data';
   } else if (temperature < TEMP_THRESHOLDS.COLD) {
-    tempText = 'Too cold, turn a heater';
+    tempText = 'Cold';
   } else if (temperature < TEMP_THRESHOLDS.HOT) {
     tempText = 'Good temperature';
   } else {
-    tempText = 'Too hot, open a window';
+    tempText = 'Hot';
   }
   
   // Return combined condtion text

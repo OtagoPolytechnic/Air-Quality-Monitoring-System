@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useGetRoomData = (endpoint, blockName) => { // Endpoint and blockName are passed from the OverviewTable component
+export const useGetRoomSensorsByBlock = (endpoint, blockName) => { // Endpoint and blockName are passed from the OverviewTable component
   const [rooms, setRooms] = useState([]);
   const [apiError, setApiError] = useState(null);
 
@@ -53,4 +53,4 @@ export const useGetRoomData = (endpoint, blockName) => { // Endpoint and blockNa
 };
 
 // Add default export
-export default useGetRoomData;
+export default useGetRoomSensorsByBlock;

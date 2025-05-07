@@ -2,7 +2,7 @@ import React from 'react';
 import TableHeaders from '../TableHeaders';
 import OverviewTableBody from './OverviewTableBody';
 import useSortableData from '../../../../Hooks/Tables/useSortableTable';
-import useGetRoomData from '../../../../Hooks/Overview/useGetRoomData';
+import useGetRoomSensorsByBlock from '../../../../Hooks/Overview/useGetRoomSensorsByBlock';
 import { tableHeadersOverview } from "../../../../utils/constants/constants";
 
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
@@ -14,7 +14,7 @@ const OverviewTable = ({ blockName }) => {
     ? `${apiKey}/api/v1/blocks/latest/${blockName}`
     : `${apiKey}/api/v1/devices`; // Default endpoint if rendered incorrectly returns all devices
     
-  const { rooms: initialData, apiError } = useGetRoomData(endpoint, blockName); // Fetch data from the API in Hooks/Overview/useGetRoomData 
+  const { rooms: initialData, apiError } = useGetRoomSensorsByBlock(endpoint, blockName); // Fetch data from the API in Hooks/Overview/useGetRoomSensorsByBlock 
   const { sortedData, onSort, sortConfig } = useSortableData(initialData); // Sort the data using the custom hook useSortableData
   console.log(initialData);
   return (

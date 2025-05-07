@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useGetRoomSensorsByBlock = (endpoint, blockName) => { // Endpoint and blockName are passed from the OverviewTable component
+export const useGetRoomSensorsByBlock = (endpoint, blockName) => {
   const [rooms, setRooms] = useState([]);
   const [apiError, setApiError] = useState(null);
 
@@ -13,31 +13,23 @@ export const useGetRoomSensorsByBlock = (endpoint, blockName) => { // Endpoint a
         }
         
         const data = await response.json();
-        let processedData;
-
-        if (blockName) {
-          // Process data for block-specific endpoint
-          // sensorData '?' to check if the sensorData array exists to catch undefined errors
-          // sensorData || 0 or '' is a fallback value if the data is not available
-          processedData = data.data.device.map(device => ({
+        const sourceArray = data.data?.device || data.data || [];
+        
+        const processedData = sourceArray.map(device => {
+          // [0] is used to get the latest update
+          const sensorData = device.sensorData?.[0] || device;
+          
+          return {
+            // sensorData '?' to check if the sensorData array exists to catch undefined errors
+            // sensorData || 0 or '' is a fallback value if the data is not available
             room_number: device.room_number,
             dev_eui: device.dev_eui,
-            co2Level: device.sensorData[0]?.co2 || 0,
-            temperature: device.sensorData[0]?.temperature || 0,
-            lastUpdated: device.sensorData[0]?.createdAt || '',
-            blockName: blockName
-          }));
-        } else {
-          // Process data for all devices if no blockName is provided
-          processedData = data.map(device => ({
-            room_number: device.room_number,
-            dev_eui: device.dev_eui,
-            co2Level: device.co2 || 0,
-            temperature: device.temperature || 0,
-            lastUpdated: device.createdAt || '',
-            blockName: device.blockName
-          }));
-        }
+            co2Level: sensorData?.co2 || 0,
+            temperature: sensorData?.temperature || 0,
+            lastUpdated: sensorData?.createdAt || device.createdAt || '',
+            blockName: blockName || device.block?.blockName
+          };
+        });
         
         setRooms(processedData);
       } catch (error) {
@@ -52,5 +44,4 @@ export const useGetRoomSensorsByBlock = (endpoint, blockName) => { // Endpoint a
   return { rooms, apiError };
 };
 
-// Add default export
 export default useGetRoomSensorsByBlock;

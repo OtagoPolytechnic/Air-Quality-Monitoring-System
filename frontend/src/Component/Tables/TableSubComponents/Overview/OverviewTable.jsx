@@ -10,9 +10,7 @@ const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 const OverviewTable = ({ blockName }) => {
 
   // Determine which endpoint to use based on blockName passed when rendering OverviewPanel
-  const endpoint = blockName 
-    ? `${apiKey}/api/v1/blocks/latest/${blockName}`
-    : `${apiKey}/api/v1/devices`; // Default endpoint if rendered incorrectly returns all devices
+  const endpoint = `${apiKey}/api/v1/blocks/latest/${blockName}`;
     
   const { rooms: initialData, apiError } = useGetRoomSensorsByBlock(endpoint, blockName); // Fetch data from the API in Hooks/Overview/useGetRoomSensorsByBlock 
   const { sortedData, onSort, sortConfig } = useSortableData(initialData); // Sort the data using the custom hook useSortableData

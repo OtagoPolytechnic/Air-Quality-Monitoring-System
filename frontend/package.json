@@ -28,7 +28,8 @@
     "react-router-dom": "^6.23.1",
     "recharts": "^2.13.0-alpha.4",
     "tailwind": "^4.0.0",
-    "ws": "^8.18.0"
+    "ws": "^8.18.0",
+    "jest": "^21.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

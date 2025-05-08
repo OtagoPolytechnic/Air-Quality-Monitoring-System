@@ -13,15 +13,13 @@ export const useGetRoomSensorsByBlock = (endpoint, blockName) => {
         }
         
         const data = await response.json();
-        const sourceArray = data.data?.device || data.data || [];
+        const sourceArray = data.data?.device || [];
         
         const processedData = sourceArray.map(device => {
           // [0] is used to get the latest update
           const sensorData = device.sensorData?.[0] || device;
           
           return {
-            // sensorData '?' to check if the sensorData array exists to catch undefined errors
-            // sensorData || 0 or '' is a fallback value if the data is not available
             room_number: device.room_number,
             dev_eui: device.dev_eui,
             co2Level: sensorData?.co2 || 0,

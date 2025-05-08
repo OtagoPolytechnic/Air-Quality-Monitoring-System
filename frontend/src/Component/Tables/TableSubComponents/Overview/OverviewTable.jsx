@@ -14,7 +14,6 @@ const OverviewTable = ({ blockName }) => {
     
   const { rooms: initialData, apiError } = useGetRoomSensorsByBlock(endpoint, blockName); // Fetch data from the API in Hooks/Overview/useGetRoomSensorsByBlock 
   const { sortedData, onSort, sortConfig } = useSortableData(initialData); // Sort the data using the custom hook useSortableData
-  console.log(initialData);
   return (
     <>
       {apiError ? (
@@ -24,7 +23,7 @@ const OverviewTable = ({ blockName }) => {
           {sortedData.length === 0 ? (
             <h1 className={'text-2xl text-center p-4'}>No room sensors found</h1>
           ) : (
-            <table className={'w-full text-medium text-left text-gray-500 divide-y divide-gray-200 '}>
+            <table className={'w-full table-fixed text-medium text-left text-gray-500 divide-y divide-gray-200'}>
               <TableHeaders headers={tableHeadersOverview} onSort={onSort} sortConfig={sortConfig} />  
               <OverviewTableBody tableFields={sortedData} />
             </table>

@@ -34,9 +34,6 @@ export const PopUp = ({
   const disabled = actionType === 'edit';
   const modalTitle = actionType === 'add' ? 'Add Device' : 'Edit Device';
 
-  console.log('Error:', error);
-  console.log('Update Success:', updateSuccess);
-
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
@@ -221,11 +218,15 @@ export const PopUp = ({
                     Close
                   </button>
                 </div>
-              ) : !loading && (
-                <>
-                  <p className="text-center text-green-500">{updateSuccess}</p>
-                  <MdOutlineCheckCircle className="text-green-500 text-2xl self-center" />
-                </>
+              ) : (
+                !loading && (
+                  <>
+                    <p className="text-center text-green-500">
+                      {updateSuccess}
+                    </p>
+                    <MdOutlineCheckCircle className="text-green-500 text-2xl self-center" />
+                  </>
+                )
               )}
             </div>
           </form>

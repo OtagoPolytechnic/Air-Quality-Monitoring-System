@@ -123,17 +123,6 @@ const updateDeviceRoom = async (req, res) => {
       });
     }
 
-    const findExistingRoomNumber = await prisma.device.findUnique({
-      where: { room_number: String(room_number) },
-    });
-
-    if (findExistingRoomNumber) {
-      return res.status(STATUS_CODES.CONFLICT).json({
-        statusCode: res.statusCode,
-        message: `Device with room number ${room_number} already exists in the database`,
-      });
-    }
-
     const updatedRoomNumber = await prisma.device.update({
       where: { dev_eui: String(dev_eui) },
       data: { room_number: room_number },

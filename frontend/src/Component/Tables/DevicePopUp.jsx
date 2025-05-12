@@ -17,7 +17,9 @@ export const PopUp = ({
   const [deviceId, setDeviceId] = useState(item.deviceId);
   const [error, setError] = useState('');
   const [updateSuccess, setUpdateSuccess] = useState('');
+
   const {
+    loading,
     useUpdateDeviceBlockRequest,
     useUpdateDeviceRoomRequest,
     resetApiError,
@@ -27,8 +29,10 @@ export const PopUp = ({
     setError,
     setUpdateSuccess
   );
+
   const disabled = actionType === 'edit';
   const modalTitle = actionType === 'add' ? 'Add Device' : 'Edit Device';
+
   console.log('Error:', error);
   console.log('Update Success:', updateSuccess);
 
@@ -55,11 +59,13 @@ export const PopUp = ({
         await useUpdateDeviceRoomRequest(updatedItem, deviceEUI);
       }
 
-      if (!error) {
+      if (!loading && !error && updateSuccess) {
         updateTableData({ ...item, ...updatedItem });
         setTimeout(() => {
           handleClick();
         }, 1200);
+      } else if (error && !loading) {
+        console.error('Error updating device:', error);
       }
     } catch (err) {
       console.error('Error updating device:', err);
@@ -173,28 +179,40 @@ export const PopUp = ({
                   type="text"
                   id="room_number"
                   name="room_number"
-                  placeholder={roomNumber ?? 'Unassigned'}
+                  placeholder={roomNumber}
                   value={roomNumber}
                   onChange={(e) => setRoomNumber(e.target.value)}
                   className="p-2 pl-3 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
                 />
               </div>
-              {error && (
-                <p className="text-center my-4 text-red-500">{error}</p>
+              {error && <p className="text-center text-red-500">{error}</p>}
+              {!updateSuccess ? (
+                <div className="flex flex-wrap flex-col gap-2 mt-2 w-full items-center justify-center flex-col">
+                  <UpdateButton
+                    style={
+                      'bg-green-500 w-[145px] h-[40px] text-white text-base rounded-md hover:bg-green-600'
+                    }
+                    type={'submit'}
+                    text={
+                      loading
+                        ? 'Loading...'
+                        : actionType === 'edit'
+                          ? 'Save Changes'
+                          : 'Add Device'
+                    }
+                    disabled={loading}
+                  />
+                  <button
+                    className="text-black underline mt-4 w-fit"
+                    onClick={handleClick}
+                    disabled={loading}
+                  >
+                    Close
+                  </button>
+                </div>
+              ) : (
+                <p className="text-center text-green-500">{updateSuccess}</p>
               )}
-              <div className="flex flex-wrap w-full items-center justify-center flex-col">
-                <UpdateButton
-                  style={'bg-blue-500 w-[150px] h-[45px] text-white rounded-md'}
-                  type={'submit'}
-                  text={actionType === 'edit' ? 'Save Changes' : 'Add Device'}
-                />
-                <button
-                  className="text-black underline mt-4 w-fit"
-                  onClick={handleClick}
-                >
-                  Close
-                </button>
-              </div>
             </div>
           </form>
         </div>

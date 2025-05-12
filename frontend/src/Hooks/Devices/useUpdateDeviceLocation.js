@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 export const useUpdateDeviceLocation = (apiKey, setError, setUpdateSuccess) => {
   const [devices, setDevices] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const resetApiError = () => {
     setError('');
@@ -12,6 +13,7 @@ export const useUpdateDeviceLocation = (apiKey, setError, setUpdateSuccess) => {
   };
 
   const useUpdateDeviceBlockRequest = async (newBlock, deviceEUI) => {
+    setLoading(true);
     try {
       const response = await fetch(`${apiKey}/addBlock/${deviceEUI}`, {
         method: 'PUT',
@@ -24,16 +26,20 @@ export const useUpdateDeviceLocation = (apiKey, setError, setUpdateSuccess) => {
       const blockData = await response.json();
 
       if (blockData.statusCode === 200) {
-        return setUpdateSuccess('Device block updated successfully');
+        setLoading(false);
+        setUpdateSuccess('Device block updated successfully');
       } else {
         setError(blockData.message || 'Failed to update device block');
       }
     } catch (error) {
       setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   const useUpdateDeviceRoomRequest = async (newRoom, deviceEUI) => {
+    setLoading(true);
     try {
       const response = await fetch(`${apiKey}/${deviceEUI}`, {
         method: 'PUT',
@@ -46,16 +52,20 @@ export const useUpdateDeviceLocation = (apiKey, setError, setUpdateSuccess) => {
       const roomData = await response.json();
 
       if (roomData.statusCode === 200) {
-        return setUpdateSuccess('Device room updated successfully');
+        setLoading(false);
+        setUpdateSuccess('Device room updated successfully');
       } else {
         setError(roomData.message || 'Failed to update device room');
       }
     } catch (error) {
       setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
+    setLoading(true);
     const fetchData = async () => {
       try {
         const response = await fetch(apiKey);
@@ -70,6 +80,8 @@ export const useUpdateDeviceLocation = (apiKey, setError, setUpdateSuccess) => {
         setDevices(mappedData);
       } catch (error) {
         setError(error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -78,6 +90,7 @@ export const useUpdateDeviceLocation = (apiKey, setError, setUpdateSuccess) => {
 
   return {
     devices,
+    loading,
     resetApiError,
     resetUpdateSuccess,
     useUpdateDeviceRoomRequest,

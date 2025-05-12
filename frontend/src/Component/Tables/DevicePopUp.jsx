@@ -69,8 +69,8 @@ export const PopUp = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="max-w-lg rounded-xl overflow-hidden shadow-lg bg-white p-4">
-        <div className="w-full p-4 text-gray-900">
+      <div className="w-1/3 h-1/2 rounded-xl overflow-hidden shadow-lg bg-white p-6">
+        <div className="w-full h-full text-gray-900">
           <div className="flex self-center items-center justify-center mb-4">
             <h1 className="text-3xl font-bold">{modalTitle}</h1>
           </div>
@@ -79,18 +79,13 @@ export const PopUp = ({
               <div>
                 <h1 className="text-xl font-bold">Device Information</h1>
                 <div>
-                  <label
-                    // htmlFor="deviceId"
-                    className="block text-sm font-semibold leading-8 mt-2 px-2"
-                  >
+                  <label className="block text-sm font-semibold leading-8 mt-2 px-2">
                     Device ID{' '}
                     {!disabled && <span className="text-red-500">*</span>}
                   </label>
                   <input
                     required
                     type="text"
-                    // id="deviceId"
-                    // name="deviceId"
                     placeholder={item?.deviceId || 'Enter name'}
                     value={deviceId}
                     onChange={(e) => setDeviceId(e.target.value)}
@@ -106,24 +101,23 @@ export const PopUp = ({
                     {!disabled && <span className="text-red-500">*</span>}
                   </label>
                   <input
-                    disabled={disabled} // Disable for add action
+                    disabled={disabled}
                     placeholder="FF:FF:FF:FF:FF:FF"
                     type="text"
                     id="deviceEUI"
                     name="deviceEUI"
                     value={deviceEUI}
                     onChange={(e) => setDeviceEUI(e.target.value)}
-                    // defaultValue={item?.dev_eui} // Display the device EUI
                     className="p-2 pl-3 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
                   />
                 </div>
               </div>
             )}
-            <div>
+            <div className="h-full flex flex-col justify-between gap-6">
               <div className="font-semibold text-base italic text-gray-600 text-center">
                 <p>{item.deviceId}</p>
               </div>
-              <h1 className="text-xl mt-4 font-bold">Location Information</h1>
+              <h1 className="text-xl font-bold">Location Information</h1>
               <div>
                 <label
                   htmlFor="blockName"
@@ -139,8 +133,8 @@ export const PopUp = ({
                   id="blockName"
                   name="blockName"
                   placeholder="Select Block"
-                  value={blockName} // Controlled input
-                  onChange={(e) => setBlockName(e.target.value)} // Update state
+                  value={blockName}
+                  onChange={(e) => setBlockName(e.target.value)}
                   className="p-2 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
                 >
                   <option value="Unassigned">Unassigned</option>
@@ -185,29 +179,22 @@ export const PopUp = ({
                   className="p-2 pl-3 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
                 />
               </div>
-
-              <p
-                className={`text-center my-4 ${
-                  error ? 'text-red-500' : updateSuccess ? 'text-green-500' : ''
-                }`}
-              >
-                {error || updateSuccess}
-              </p>
-              <UpdateButton
-                style={
-                  'bg-blue-500 w-[150px] h-[45px] text-white rounded-md ml-6'
-                }
-                type={'submit'}
-                text={actionType === 'edit' ? 'Save Changes' : 'Add Device'}
-              />
-              <UpdateButton
-                style={
-                  'bg-red-500 w-[150px] h-[45px] text-white rounded-md mx-6'
-                }
-                type="button"
-                onClick={handleClick}
-                text="Cancel"
-              />
+              {error && (
+                <p className="text-center my-4 text-red-500">{error}</p>
+              )}
+              <div className="flex flex-wrap w-full items-center justify-center flex-col">
+                <UpdateButton
+                  style={'bg-blue-500 w-[150px] h-[45px] text-white rounded-md'}
+                  type={'submit'}
+                  text={actionType === 'edit' ? 'Save Changes' : 'Add Device'}
+                />
+                <button
+                  className="text-black underline mt-4 w-fit"
+                  onClick={handleClick}
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </form>
         </div>

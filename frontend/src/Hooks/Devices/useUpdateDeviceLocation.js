@@ -1,50 +1,57 @@
 import { useState, useEffect } from 'react';
 
-export const useAddLocationToDevice = (apiKey) => {
+export const useUpdateDeviceLocation = (apiKey, setError, setUpdateSuccess) => {
   const [devices, setDevices] = useState({});
-  const [apiError, setApiError] = useState('');
-  const [updateSuccess, setUpdateSuccess] = useState("");
 
   const resetApiError = () => {
-    setApiError('');
+    setError('');
   };
 
   const resetUpdateSuccess = () => {
-    setUpdateSuccess("");
+    setUpdateSuccess('');
   };
 
-  const updateDeviceLocationRequest = async (newLocation, deviceEUI) => {
+  const useUpdateDeviceBlockRequest = async (newBlock, deviceEUI) => {
     try {
-      const newBlock = await fetch(`${apiKey}/addBlock/${deviceEUI}`, {
+      const response = await fetch(`${apiKey}/addBlock/${deviceEUI}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ blockName: newLocation.blockName })
+        body: JSON.stringify({ blockName: newBlock.blockName })
       });
 
-      const blockJson = await newBlock.json();
+      const blockData = await response.json();
 
-      const newRoom = await fetch(`${apiKey}/${deviceEUI}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ room_number: newLocation.room_number })
-      });
-
-      const roomJson = await newRoom.json();
-
-      if (roomJson.statusCode === 200 && blockJson.statusCode === 200) {
-        setUpdateSuccess("Device location updated successfully");
-      }
-      else if (roomJson.statusCode !== 200) {
-        setApiError(roomJson.message);
+      if (blockData.statusCode === 200) {
+        return setUpdateSuccess('Device block updated successfully');
       } else {
-        setApiError(blockJson.message);
+        setError(blockData.message || 'Failed to update device block');
       }
     } catch (error) {
-      setApiError(error.message);
+      setError(error.message);
+    }
+  };
+
+  const useUpdateDeviceRoomRequest = async (newRoom, deviceEUI) => {
+    try {
+      const response = await fetch(`${apiKey}/${deviceEUI}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ room_number: newRoom.room_number })
+      });
+
+      const roomData = await response.json();
+
+      if (roomData.statusCode === 200) {
+        return setUpdateSuccess('Device room updated successfully');
+      } else {
+        setError(roomData.message || 'Failed to update device room');
+      }
+    } catch (error) {
+      setError(error.message);
     }
   };
 
@@ -62,7 +69,7 @@ export const useAddLocationToDevice = (apiKey) => {
         });
         setDevices(mappedData);
       } catch (error) {
-        setApiError(error);
+        setError(error);
       }
     };
 
@@ -71,10 +78,9 @@ export const useAddLocationToDevice = (apiKey) => {
 
   return {
     devices,
-    apiError,
-    updateSuccess,
     resetApiError,
     resetUpdateSuccess,
-    updateDeviceLocationRequest
+    useUpdateDeviceRoomRequest,
+    useUpdateDeviceBlockRequest
   };
 };

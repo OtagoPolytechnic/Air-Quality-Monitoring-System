@@ -36,6 +36,21 @@ export const PopUp = ({
   console.log('Error:', error);
   console.log('Update Success:', updateSuccess);
 
+  const handleChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    if (name === 'room_number') {
+      setRoomNumber(value);
+    } else if (name === 'blockName') {
+      setBlockName(value);
+    } else if (name === 'deviceEUI') {
+      setDeviceEUI(value);
+    } else if (name === 'deviceId') {
+      setDeviceId(value);
+    }
+    setError('');
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -59,7 +74,7 @@ export const PopUp = ({
         await useUpdateDeviceRoomRequest(updatedItem, deviceEUI);
       }
 
-      if (!loading && !error && updateSuccess) {
+      if (!loading && !error) {
         updateTableData({ ...item, ...updatedItem });
         setTimeout(() => {
           handleClick();
@@ -94,7 +109,7 @@ export const PopUp = ({
                     type="text"
                     placeholder={item?.deviceId || 'Enter name'}
                     value={deviceId}
-                    onChange={(e) => setDeviceId(e.target.value)}
+                    onChange={(e) => handleChange(e)}
                     className="p-2 pl-3 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
                   />
                 </div>
@@ -113,7 +128,7 @@ export const PopUp = ({
                     id="deviceEUI"
                     name="deviceEUI"
                     value={deviceEUI}
-                    onChange={(e) => setDeviceEUI(e.target.value)}
+                    onChange={(e) => handleChange(e)}
                     className="p-2 pl-3 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
                   />
                 </div>
@@ -140,7 +155,7 @@ export const PopUp = ({
                   name="blockName"
                   placeholder="Select Block"
                   value={blockName}
-                  onChange={(e) => setBlockName(e.target.value)}
+                  onChange={(e) => handleChange(e)}
                   className="p-2 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
                 >
                   <option value="Unassigned">Unassigned</option>
@@ -157,13 +172,6 @@ export const PopUp = ({
                   )}
                 </select>
               </div>
-              {blockName === 'Unassigned' && roomNumber !== 'Unassigned' && (
-                <div className="rounded-lg p-1.5 text-red-600 italic">
-                  <p className="text-sm font-semibold">
-                    Must assign block or set room as "Unassigned"
-                  </p>
-                </div>
-              )}
               <div>
                 <label
                   htmlFor="room_number"
@@ -181,11 +189,13 @@ export const PopUp = ({
                   name="room_number"
                   placeholder={roomNumber}
                   value={roomNumber}
-                  onChange={(e) => setRoomNumber(e.target.value)}
+                  onChange={(e) => handleChange(e)}
                   className="p-2 pl-3 block w-full rounded-lg border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 text-sm"
                 />
+                {error && (
+                  <p className="text-center text-red-500 mt-2">{error}</p>
+                )}
               </div>
-              {error && <p className="text-center text-red-500">{error}</p>}
               {!updateSuccess ? (
                 <div className="flex flex-wrap flex-col gap-2 mt-2 w-full items-center justify-center flex-col">
                   <UpdateButton
@@ -200,7 +210,7 @@ export const PopUp = ({
                           ? 'Save Changes'
                           : 'Add Device'
                     }
-                    disabled={loading}
+                    disabled={loading || error}
                   />
                   <button
                     className="text-black underline mt-4 w-fit"

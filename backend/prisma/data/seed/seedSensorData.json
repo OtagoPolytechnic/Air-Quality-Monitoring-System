@@ -48,6 +48,34 @@
       "temperature": "19.55",
       "deviceId": "eui-45450f65312b5f5",
       "dev_eui": "45450f65312b5f5"
+    },
+    {
+      "id": 8,
+      "co2": "2000",
+      "temperature": "19.55",
+      "deviceId": "eui-900064b450070f5",
+      "dev_eui": "900064b450070f5"
+    },
+    {
+      "id": 9,
+      "co2": "240",
+      "temperature": "19.55",
+      "deviceId": "eui-100009452b3547f5",
+      "dev_eui": "100009452b3547f5"
+    },
+    {
+      "id": 10,
+      "co2": "210",
+      "temperature": "19.55",
+      "deviceId": "eui-11000sd24b5456f5",
+      "dev_eui": "11000sd24b5456f5"
+    },
+    {
+      "id": 11,
+      "co2": "1000",
+      "temperature": "19.55",
+      "deviceId": "eui-110009324b5456f5",
+      "dev_eui": "110009324b5456f5"
     }
   ]
 }

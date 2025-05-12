@@ -14,6 +14,12 @@ export const checkOfflineDate = (date) => {
 };
 
 export const formatDate = (dateString) => {
+  if (!dateString) {
+    return {
+      topText: 'No data available',
+      bottomText: ''
+    };
+  }
   const date = new Date(dateString);
   const now = new Date();
 
@@ -22,26 +28,55 @@ export const formatDate = (dateString) => {
     date.getMonth() === now.getMonth() &&
     date.getFullYear() === now.getFullYear();
 
-  if (isToday) {
-    const diffInMs = now - date; // Difference in milliseconds
-    const diffInMinutes = Math.floor(diffInMs / (1000 * 60)); // Convert to minutes
+  const isYesterday =
+    date.getDate() === now.getDate() - 1 &&
+    date.getMonth() === now.getMonth() &&
+    date.getFullYear() === now.getFullYear();
 
-    if (diffInMinutes < 60) {
-      return `${diffInMinutes} minutes ago`;
-    } else {
-      const diffInHours = Math.floor(diffInMinutes / 60);
-      return `${diffInHours} hours ago`;
+  const diffInMs = now - date;
+  const diffInMinutes = Math.floor(diffInMs / (1000 * 60));
+  const diffInHours = Math.floor(diffInMinutes / 60);
+  const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+
+  let topText;
+  let bottomText;
+
+  if (isToday) {
+    topText = `Today, ${date.toLocaleTimeString('en-GB', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    })}`;
+    if (diffInMinutes < 60 && diffInMinutes != 1) {
+      bottomText = `${diffInMinutes} minutes ago`;
+    } else if (diffInMinutes == 1) {
+      bottomText = `${diffInMinutes} minute ago`;
     }
+    else {
+      bottomText = `${diffInHours} hours ago`;
+    }
+  } else if (isYesterday) {
+    topText = `Yesterday, ${date.toLocaleTimeString('en-GB', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    })}`;
+    bottomText = `${diffInHours} hours ago`;
+  } else {
+    topText = `${date.toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: '2-digit',
+      year: '2-digit'
+    })}, ${date.toLocaleTimeString('en-GB', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    })}`;
+    bottomText = `${diffInDays} days ago`;
   }
 
-  const options = {
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: true,
-    day: '2-digit',
-    month: '2-digit',
-    year: '2-digit'
+  return {
+    topText,
+    bottomText
   };
-
-  return date.toLocaleString('en-GB', options).replace(',', '');
 };

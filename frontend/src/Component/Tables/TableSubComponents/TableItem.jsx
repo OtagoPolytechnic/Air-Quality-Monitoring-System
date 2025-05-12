@@ -1,6 +1,6 @@
-const TableItem = ({ item }) => {
+const TableItem = ({ item, className }) => {
   return (
-    <td className="pl-1 py-2 font-medium text-gray-900 whitespace-nowrap">
+    <td className={`${className} pl-1 py-2 text-gray-900`}>
       {item}
     </td>
   );

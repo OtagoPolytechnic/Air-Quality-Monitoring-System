@@ -20,7 +20,6 @@ export const useGetDeviceList = (apiKey) => {
             const response = await fetch(apiKey);
             const data = await response.json();
             const mappedData = data.data.map((item) => {
-                console.log("print:",item.sensorData[0])
                 return {
                     id: item.id,
                     room_number: item.room_number ? item.room_number : "Unassigned",

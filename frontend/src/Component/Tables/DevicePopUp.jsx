@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { UpdateButton } from '../Sensor/UpdateSensorSubComponents/UpdateButton';
 import { useUpdateDeviceLocation } from '../../Hooks/Devices/useUpdateDeviceLocation';
+import { MdOutlineCheckCircle } from 'react-icons/md';
 
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
@@ -220,8 +221,11 @@ export const PopUp = ({
                     Close
                   </button>
                 </div>
-              ) : (
-                <p className="text-center text-green-500">{updateSuccess}</p>
+              ) : !loading && (
+                <>
+                  <p className="text-center text-green-500">{updateSuccess}</p>
+                  <MdOutlineCheckCircle className="text-green-500 text-2xl self-center" />
+                </>
               )}
             </div>
           </form>

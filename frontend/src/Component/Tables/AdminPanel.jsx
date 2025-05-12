@@ -24,7 +24,7 @@ const AdminPanel = () => {
       <div className="p-4">
 
       <section
-        className={'relative overflow-x-auto mx-4 rounded-lg border shadow-sm'}
+        className={'relative overflow-x-auto mx-4 rounded-lg border shadow-sm '}
         > <AdminTable />
       </section>
         </div>

@@ -41,13 +41,13 @@ const AdminTableBody = ({ tableFields, updateTableData }) => {
               const { topText, bottomText } = formatDate(item.lastSeen);
               return (
                 <tr key={item.id} className="hover:bg-gray-200 odd:bg-gray-50">
-                  <td className="pl-1 py-2 text-gray-900">
+                  <td className="pl-2 py-2 text-gray-900">
                     <div className="font-semibold">{item.deviceId}</div>
                     <div className="text-gray-500 italic">{item.dev_eui}</div>
                   </td>
                   <TableItem item={item.room_number} />
                   <TableItem item={item.blockName} />
-                  <td className="pl-1 py-2 text-gray-900">
+                  <td className="pl-2 py-2 text-gray-900">
                     <div className="font-semibold">{topText}</div>
                     <div className="text-gray-500 italic">{bottomText}</div>
                   </td>

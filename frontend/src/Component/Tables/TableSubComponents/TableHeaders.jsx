@@ -6,7 +6,7 @@ const TableHeaders = ({ headers, onSort, sortConfig }) => {
           <th
             key={index}
             scope="col"
-            className="py-3 px-1 sm:text-clip cursor-pointer"
+            className="py-3 px-2 sm:text-clip cursor-pointer"
             onClick={() => onSort(header.key)}
           >
             {header.label}

@@ -79,6 +79,12 @@ const getAllDevices = async (req, res) => {
             blockName: true,
           },
         },
+        sensorData: {
+          orderBy: {
+            createdAt: 'desc',
+          },
+          take: 1,
+        },
       },
       take: Number(amount),
       skip: Number(page - 1) * Number(amount),

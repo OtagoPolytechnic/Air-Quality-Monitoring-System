@@ -25,7 +25,7 @@ export const useGetDeviceList = (apiKey) => {
                     room_number: item.room_number ? item.room_number : "Unassigned",
                     deviceId: item.deviceId,
                     dev_eui: item.dev_eui,
-                    lastSeen: item.updatedAt,
+                    lastSeen: item.sensorData[0].createdAt,
                     blockName: item.block ? item.block.blockName : "Unassigned",
                 };
             });

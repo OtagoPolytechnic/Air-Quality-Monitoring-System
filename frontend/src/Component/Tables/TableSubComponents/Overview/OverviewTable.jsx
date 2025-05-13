@@ -23,10 +23,10 @@ const OverviewTable = ({ blockName }) => {
           {sortedData.length === 0 ? (
             <h1 className={'text-2xl text-center p-4'}>No room sensors found</h1>
           ) : (
-            <table className={'w-full table-fixed text-medium text-left text-gray-500 divide-y divide-gray-200'}>
-              <TableHeaders headers={tableHeadersOverview} onSort={onSort} sortConfig={sortConfig} />  
-              <OverviewTableBody tableFields={sortedData} />
-            </table>
+              <table className={'w-full table-auto border-collapse text-medium text-left text-gray-500 divide-y divide-gray-200'}>
+                <TableHeaders headers={tableHeadersOverview} onSort={onSort} sortConfig={sortConfig} />  
+                <OverviewTableBody tableFields={sortedData} />
+              </table>
           )}
         </>
       )}

@@ -51,3 +51,15 @@ ALTER TABLE "Device" ADD CONSTRAINT "Device_blockId_fkey" FOREIGN KEY ("blockId"
 
 -- AddForeignKey
 ALTER TABLE "SensorData" ADD CONSTRAINT "SensorData_deviceId_fkey" FOREIGN KEY ("deviceId") REFERENCES "Device"("deviceId") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- DropIndex
+DROP INDEX IF EXISTS "Device_room_number_key";
+
+-- AlterTable
+ALTER TABLE "Device" ALTER COLUMN "room_number" DROP NOT NULL;
+
+-- AlterTable
+ALTER TABLE "Device" ALTER COLUMN "room_number" SET DEFAULT 'Unassigned';
+
+-- AlterTable
+ALTER TABLE "Device" ALTER COLUMN "room_number" SET NOT NULL;

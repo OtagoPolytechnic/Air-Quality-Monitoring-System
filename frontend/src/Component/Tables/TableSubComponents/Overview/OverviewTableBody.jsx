@@ -22,7 +22,7 @@ const OverviewTableBody = ({ tableFields }) => {
             <td className="pl-1 py-2 font-medium whitespace-nowrap text-gray-900">
               {item.co2Level} ppm
             </td>
-            <td className="pl-1 py-2 font-medium whitespace-nowrap text-gray-900">
+            <td className="pl-1 py-2 font-medium whitespace-nowrap indent-8 text-gray-900">
               {item.temperature}°C
             </td>
             <td className="pl-1 py-2 whitespace-nowrap">

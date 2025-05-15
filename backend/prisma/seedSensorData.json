@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "co2": "999",
+      "co2": "6000",
       "temperature": "30",
       "createdAt": "2024-05-22T06:53:20.565Z",
       "deviceId": "eui-2000024b080301f5",
@@ -18,7 +18,7 @@
     },
     {
       "id": 3,
-      "co2": "400",
+      "co2": "2200",
       "temperature": "19",
       "createdAt": "2024-03-28T06:48:18.479Z",
       "deviceId": "eui-3000024b080301f5",
@@ -27,14 +27,14 @@
     {
       "id": 4,
       "co2": "850",
-      "temperature": "22",
+      "temperature": "22", 
       "createdAt": "2024-03-28T06:48:18.479Z",
       "deviceId": "eui-4000024b080301f5",
       "dev_eui": "4000024b080301f5"
     },
     {
       "id": 5,
-      "co2": "300",
+      "co2": "1600",
       "temperature": "19",
       "createdAt": "2024-01-01T06:48:18.479Z",
       "deviceId": "eui-5000024b080301f5",
@@ -49,8 +49,8 @@
       "dev_eui": "324b080301f5"
     },
     {
-      "id": 6,
-      "co2": "200",
+      "id": 7,
+      "co2": "50000",
       "temperature": "19.55",
       "createdAt": "2024-01-01T06:48:18.479Z",
       "deviceId": "eui-324b080301f5",

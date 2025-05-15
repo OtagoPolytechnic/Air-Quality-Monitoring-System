@@ -1,5 +1,4 @@
 import AdminTable from './TableSubComponents/Admin/AdminTable';
-import TableButton from './TableSubComponents/TableButton';
 import { useGetBlockList } from '../../Hooks/Blocks/useGetBlockList';
 import PopUp from './DevicePopUp';
 import { useState } from 'react';
@@ -20,7 +19,6 @@ const AdminPanel = () => {
 
   return (
     <>
-      {/* <TableButton text={'Add Device'} onClick={() => handleClick('add')} /> */}
       <div className="p-4">
 
       <section

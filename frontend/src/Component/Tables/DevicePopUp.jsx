@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { UpdateButton } from '../Sensor/UpdateSensorSubComponents/UpdateButton';
 import { useUpdateDeviceLocation } from '../../Hooks/Devices/useUpdateDeviceLocation';
 import { MdOutlineCheckCircle } from 'react-icons/md';

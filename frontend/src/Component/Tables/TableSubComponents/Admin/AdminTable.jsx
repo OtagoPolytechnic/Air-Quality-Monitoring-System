@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import TableHeaders from '../TableHeaders';
 import { useGetDeviceList } from '../../../../Hooks/Devices/useGetDeviceList';
 import AdminTableBody from './AdminTableBody';

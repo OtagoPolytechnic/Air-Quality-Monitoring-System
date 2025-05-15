@@ -1,7 +1,10 @@
 import { PrismaClient } from '@prisma/client';
 import fs from 'fs/promises';
  
+import fs from 'fs/promises';
+ 
 const prisma = new PrismaClient();
+ 
  
 const main = async () => {
   try {
@@ -22,6 +25,7 @@ const main = async () => {
         },
       });
  
+ 
       if (!existingBlocks) {
         const { blockName } = blockSeed;
         await prisma.block.create({
@@ -32,6 +36,7 @@ const main = async () => {
         console.log(`Block ${blockName} seeded`);
       }
     }
+ 
  
     for (let i = 0; i < seedDevices.data.length; i++) {
       const deviceSeed = seedDevices.data[i];
@@ -48,6 +53,7 @@ const main = async () => {
         },
       });
  
+ 
       if (!existingDevices) {
         const { room_number, deviceId, dev_eui, blockId } = deviceSeed;
 
@@ -60,12 +66,15 @@ const main = async () => {
           },
         });
  
+ 
         console.log(`Device ${deviceId} seeded`);
       }
     }
  
+ 
     for (let i = 0; i < seedSensorData.data.length; i++) {
       const sensorSeed = seedSensorData.data[i];
+ 
  
       const { co2, temperature, deviceId, dev_eui } = sensorSeed;
       await prisma.sensorData.create({
@@ -79,6 +88,7 @@ const main = async () => {
       console.log(`Sensor Data ${deviceId} seeded`);
     }
  
+ 
     await prisma.$disconnect();
   } catch (error) {
     console.error('Error seeding', error);
@@ -86,5 +96,6 @@ const main = async () => {
     process.exit(1);
   }
 };
+ 
  
 main();

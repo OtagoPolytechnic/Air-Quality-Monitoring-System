@@ -1,7 +1,7 @@
 const TableHeaders = ({ headers, onSort, sortConfig }) => {
   return (
     <thead>
-      <tr className="text-xs text-gray-700 uppercase bg-gray-100">
+      <tr className="text-sm text-gray-700 uppercase bg-gray-100">
         {headers.map((header, index) => (
           <th
             key={index}
@@ -24,7 +24,6 @@ const TableHeaders = ({ headers, onSort, sortConfig }) => {
             </span>
           </th>
         ))}
-        <th className="py-3 px-1 sm:text-clip"></th>
       </tr>
     </thead>
   );

@@ -6,6 +6,7 @@ import { Co2Sensor } from '../Co2/Co2Sensor';
 import { useParams } from 'react-router-dom';
 import { checkOfflineDate } from '../../utils/dateTime/dateTimeFunctions';
 
+
 const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
 const BlockPage = () => {
@@ -57,6 +58,7 @@ useEffect(() => {
                   <Co2Sensor  room_number={device.room_number} co2={checkOfflineDate(device.createdAt) ? 0 : device.co2} />
                 </NavLink>
               ))}
+              
             </div>
           </>
         ) : (

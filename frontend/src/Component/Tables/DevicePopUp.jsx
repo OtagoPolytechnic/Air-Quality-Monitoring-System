@@ -88,9 +88,9 @@ export const PopUp = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="w-1/3 h-1/2 rounded-xl overflow-hidden shadow-lg bg-white p-6">
+      <div className="max-w-1/3 max-h-1/2 rounded-xl overflow-hidden shadow-lg bg-white p-4">
         <div className="w-full h-full text-gray-900">
-          <div className="flex self-center items-center justify-center mb-4">
+          <div className="flex self-center items-center justify-center mb-2">
             <h1 className="text-3xl font-bold">{modalTitle}</h1>
           </div>
           <form onSubmit={handleSubmit}>
@@ -132,15 +132,15 @@ export const PopUp = ({
                 </div>
               </div>
             )}
-            <div className="h-full flex flex-col justify-between gap-6">
+            <div className="h-full w-full flex flex-col justify-between gap-4">
               <div className="font-semibold text-base italic text-gray-600 text-center">
                 <p>{item.deviceId}</p>
               </div>
-              <h1 className="text-xl font-bold">Location Information</h1>
+              <h1 className="text-xl font-bold ml-2 mt-2">Location Information</h1>
               <div>
                 <label
                   htmlFor="blockName"
-                  className="block text-sm font-semibold leading-8 mt-2 inline-flex justify-between w-full px-2"
+                  className="block text-sm font-semibold leading-8 inline-flex justify-between w-full px-2"
                 >
                   <p>Area</p>
                   <p className="text-gray-500 italic">
@@ -173,10 +173,10 @@ export const PopUp = ({
               <div>
                 <label
                   htmlFor="room_number"
-                  className="block text-sm font-semibold leading-8 mt-4 inline-flex justify-between w-full px-2"
+                  className="block text-sm font-semibold leading-8 mt-2 inline-flex justify-between w-full px-2"
                 >
                   <p>Room Number</p>
-                  <p className="text-gray-500 italic">
+                  <p className="ml-8 text-gray-500 italic">
                     "Unassigned" if not assigned
                   </p>
                 </label>
@@ -211,7 +211,7 @@ export const PopUp = ({
                     disabled={loading || error}
                   />
                   <button
-                    className="text-black underline mt-4 w-fit"
+                    className="text-black underline my-2 w-fit"
                     onClick={handleClick}
                     disabled={loading}
                   >

@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
-import seedDevices from './seedDevices.json' assert { type: 'json' };
-import seedSensorData from './seedSensorData.json' assert { type: 'json' };
-import seedBlocks from './seedBlocks.json' assert { type: 'json' };
+import seedDevices from './seedDevices.json' with { type: 'json' };
+import seedSensorData from './seedSensorData.json' with { type: 'json' };
+import seedBlocks from './seedBlocks.json' with { type: 'json' };
 
 const prisma = new PrismaClient();
 

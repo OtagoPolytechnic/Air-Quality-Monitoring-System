@@ -1,49 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import { Chart } from 'react-google-charts';
+import GaugeComponent from 'react-gauge-component';
 
-const getData = (room_nu, co2) => {
-  return [
-    ['Label', 'Value'],
-    [room_nu, parseInt(co2)],
-  ];
-};
+export const Co2Sensor = ({ co2 }) => {
+  const value = parseInt(co2);
 
-const options = {
-  redFrom: 2000,
-  redTo: 5000,
-  yellowFrom: 1000,
-  yellowTo: 2000,
-  greenFrom: 400,
-  greenTo: 1000,
-  minorTicks: 10,
-  min: 400,
-  max: 5000,
-};
-
-export const Co2Sensor = ({ room_number, co2, size, temp }) => {
-  const [data, setData] = useState(getData(room_number, co2));
-  useEffect(() => {
-    setData(getData(room_number, co2));
-  }, [room_number, co2]);
+  const getColor = (val) => {
+    if (val <= 1000) return '#22c55e';
+    if (val <= 2000) return '#facc15';
+    if (val <= 3500) return '#f97316';
+    return '#ef4444';
+  };
 
   return (
-    <div className="text-gray-900 relative flex flex-col justify-center items-center">
-      {temp && (
-        <div className="absolute top-56 right-40 z-10">
-          <p className={'text-3xl font-bold'}>{temp}°C</p>
-        </div>
-      )}
-      <Chart
-        data-testid="co2-sensor"
-        chartType="Gauge"
-        data={data}
-        options={options}
-        width={size}
-        height={size}
+    <div className="w-full max-w-[400px] aspect-square mx-auto">
+      <GaugeComponent
+        value={value}
+        minValue={400}
+        maxValue={7000}
+        arc={{
+          subArcs: [
+            {
+              limit: 7000,
+              color: getColor(value),
+            },
+          ],
+          padding: 0,
+          width: 0.3,
+          backgroundColor: 'transparent',
+        }}
+        ticks={{
+          number: 7,
+          tickLabels: ['400', '1000', '2000', '3500', '5000', '6000', '7000']
+        }}
+        labels={{
+          valueLabel: {
+            formatTextValue: () => `${value}`,
+            style: {
+              fontSize: '34px',
+              fill: '#1f2937', 
+              letterSpacing: '1px'
+            }
+          },
+          markLabel: {
+            formatTextValue: (v) => `${v}`,
+            style: {
+              fontSize: '14px',
+            }
+          }
+        }}
       />
-      {co2 === 0 && (
-        <p className="text-red-500 text-2xl">Offline</p>
-      )}
     </div>
   );
 };

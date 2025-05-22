@@ -70,7 +70,7 @@ useEffect(() => {
                         </div>
                       </div>
                       <div className="flex items-center justify-center ml-2">
-                        <div className="w-[120px] sm:w-[160px] md:w-[200px]">
+                        <div className="min-w-[300px] w-full max-w-[280px] aspect-square mx-auto">
                           <Co2Sensor
                             room_number={device.room_number}
                             co2={checkOfflineDate(device.createdAt) ? 0 : device.co2}

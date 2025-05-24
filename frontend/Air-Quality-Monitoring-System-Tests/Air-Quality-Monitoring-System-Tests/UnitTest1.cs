@@ -22,7 +22,7 @@ namespace Air_Quality_Monitoring_System_Tests
             }
         }
         [TestClass]
-        public class UnitTest3
+        public class DBlock207RouteTest
         {
             [TestMethod]
             public void TestMethod3()
@@ -39,7 +39,7 @@ namespace Air_Quality_Monitoring_System_Tests
             }
         }
         [TestClass]
-        public class UnitTest4
+        public class DBlock201RouteTest
         {
             [TestMethod]
             public void TestMethod4()
@@ -56,7 +56,7 @@ namespace Air_Quality_Monitoring_System_Tests
             }
         }
         [TestClass]
-        public class UnitTest5
+        public class DBlock105BRouteTest
         {
             [TestMethod]
             public void TestMethod5()
@@ -73,7 +73,7 @@ namespace Air_Quality_Monitoring_System_Tests
             }
         }
         [TestClass]
-        public class UnitTest6
+        public class DBlockD202RouteTest
         {
             [TestMethod]
             public void TestMethod6()
@@ -90,7 +90,7 @@ namespace Air_Quality_Monitoring_System_Tests
             }
         }
         [TestClass]
-        public class UnitTest7
+        public class DBlockD313RouteTest
         {
             [TestMethod]
             public void TestMethod7()
@@ -106,25 +106,9 @@ namespace Air_Quality_Monitoring_System_Tests
                 }
             }
         }
+     
         [TestClass]
-        public class UnitTest8
-        {
-            [TestMethod]
-            public void TestMethod8()
-            {
-                using (IWebDriver wdriver = new ChromeDriver())
-                {
-                    wdriver.Navigate().GoToUrl("https://co2-app.op-bit.nz/D-Block/D207");
-                    wdriver.Manage().Window.Maximize();
-
-
-                    Assert.AreEqual(wdriver.Url, "https://co2-app.op-bit.nz/D-Block/D207");
-
-                }
-            }
-        }
-        [TestClass]
-        public class UnitTest9
+        public class DBlock314RouteTest
         {
             [TestMethod]
             public void TestMethod9()

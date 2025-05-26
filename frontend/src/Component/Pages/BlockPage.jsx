@@ -70,12 +70,10 @@ useEffect(() => {
                         </div>
                       </div>
                       <div className="flex items-center justify-center ml-2">
-                        <div className="min-w-[300px] w-full max-w-[280px] aspect-square mx-auto">
                           <Co2Sensor
                             room_number={device.room_number}
                             co2={checkOfflineDate(device.createdAt) ? 0 : device.co2}
                           />
-                        </div>
                       </div>
                     </div>
                     <div className="flex flex-wrap sm:flex-nowrap overflow-x-auto gap-2 mt-4">

@@ -11,7 +11,7 @@ export const Co2Sensor = ({ co2 }) => {
   };
 
   return (
-    <div >
+    <div>
       <GaugeComponent
         value={value}
         minValue={400}
@@ -21,28 +21,36 @@ export const Co2Sensor = ({ co2 }) => {
             {
               limit: 7000,
               color: getColor(value),
-            },
-          ],
+              emptyColor: 'black'
+            }
+          ]
+          //emptyColor: 'white',
         }}
+       /* defaultTickValueConfig={{
+          style: {
+            fill: 'black',
+            fontSize: '16px',
+            textShadow: 'none'
+          }
+        }}*/
         labels={{
           valueLabel: {
             formatTextValue: () => `${value}`,
             style: {
-            fontSize: '30px',
-            fontWeight: 'bold',
-            fill: '#1f2937',
-            textShadow: 'none',  
-            },
+              fontSize: '30px',
+              fontWeight: 'bold',
+              fill: '#1f2937',
+              textShadow: 'none'
+            }
           },
           markLabel: {
             formatTextValue: (v) => `${v}`,
             style: {
-              fontSize: '20px',
-            },
-          },
+              fontSize: '20px'
+            }
+          }
         }}
       />
     </div>
   );
 };
-

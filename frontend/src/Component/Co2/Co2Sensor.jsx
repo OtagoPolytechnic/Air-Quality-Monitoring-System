@@ -4,11 +4,15 @@ export const Co2Sensor = ({ co2 }) => {
   const value = parseInt(co2);
 
   const getColor = (val) => {
-    if (val <= 1000) return '#22c55e';
-    if (val <= 2000) return '#facc15';
-    if (val <= 3500) return '#f97316';
-    return '#ef4444';
+    if (val <= 1000) return { r: 34, g: 197, b: 94 };
+    if (val <= 2000) return { r: 250, g: 204, b: 21 };
+    if (val <= 3500) return { r: 249, g: 115, b: 22 };
+    return { r: 239, g: 68, b: 68 };
   };
+
+  const { r, g, b } = getColor(value);
+  const solidColor = `rgb(${r}, ${g}, ${b})`;
+  const fadedColor = `rgba(${r}, ${g}, ${b}, 0.2)`; 
 
   return (
     <div>
@@ -20,19 +24,12 @@ export const Co2Sensor = ({ co2 }) => {
           subArcs: [
             {
               limit: 7000,
-              color: getColor(value),
-              emptyColor: 'black'
+              color: solidColor,
+              
             }
           ]
-          //emptyColor: 'white',
+          ,emptyColor: fadedColor,
         }}
-       /* defaultTickValueConfig={{
-          style: {
-            fill: 'black',
-            fontSize: '16px',
-            textShadow: 'none'
-          }
-        }}*/
         labels={{
           valueLabel: {
             formatTextValue: () => `${value}`,

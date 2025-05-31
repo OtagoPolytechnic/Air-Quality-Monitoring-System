@@ -6,16 +6,15 @@ using System;
 namespace Air_Quality_Monitoring_System_Tests
 {
     [TestClass]
-    public class UnitTest2
+    public class RouteTests
     {
         [TestMethod]
-        public void TestMethod2()
+        public void DBlockRouteTest()
         {
             using (IWebDriver wdriver = new ChromeDriver())
             {
                 wdriver.Navigate().GoToUrl("https://co2-app.op-bit.nz/D-Block");
                 wdriver.Manage().Window.Maximize();
-
 
                 Assert.AreEqual(wdriver.Url, "https://co2-app.op-bit.nz/D-Block");
 

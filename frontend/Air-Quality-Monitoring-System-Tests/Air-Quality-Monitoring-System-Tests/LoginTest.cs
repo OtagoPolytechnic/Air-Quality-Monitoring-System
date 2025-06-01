@@ -40,8 +40,13 @@ namespace Air_Quality_Monitoring_System_Tests
                     driver.FindElement(By.XPath("//*[@id='modal-title']"))
                 );
 
-                // Assert the success message
-                Assert.AreEqual("Successfully logged in", modalTitle.Text);
+                IWebElement nav = wait.Until(driver =>
+                {
+                    var el = driver.FindElement(By.XPath("//*[@id='root']/div/nav"));
+                    return el.Displayed ? el : throw new NoSuchElementException("Navigation bar not visible after login.");
+                });
+
+                Assert.IsTrue(nav.Displayed, "Login");
             }
         }
     }

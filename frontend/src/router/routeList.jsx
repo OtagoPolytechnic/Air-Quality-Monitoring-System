@@ -1,4 +1,3 @@
-import { Homepage } from "../Component/Pages/Homepage";
 import { RoomPage } from "../Component/Pages/Roompage";
 import Settings from "../Component/Pages/Settings";
 import { routerLabels } from "../utils/router/routerLabels";
@@ -10,12 +9,12 @@ import Users from "../Component/Pages/Users";
 import Logout from "../Component/Auth/Logout";
 import BlockPage from "../Component/Pages/BlockPage";
 import ProtectedRoute from "./protectedRoute"; 
+import { Navigate } from 'react-router-dom';
 
 export const routes = [
     {
-        path: "/",
-        label: routerLabels.home,
-        element: <Homepage />
+      path: '/',
+      element: <Navigate to="/D-Block" replace />
     },
     {
         path: "/:blockName/:roomNumber",

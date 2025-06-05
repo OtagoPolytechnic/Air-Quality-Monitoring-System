@@ -37,7 +37,7 @@ useEffect(() => {
       }
     };
     fetchDevices();
-  }, [socket]);
+  }, [socket, blockName]);
 
 
   return (

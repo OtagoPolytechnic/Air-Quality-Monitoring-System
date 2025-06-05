@@ -231,4 +231,30 @@ const getDeviceLatestData = async (req, res) => {
   }
 };
 
-export { getDevice, getAllDevices, updateDeviceRoom, updateDeviceBlock, getDeviceLatestData };
+const deleteDevice = async (req, res) => {
+  try {
+    const dev_eui = req.params.dev_eui;
+    const device = await prisma.device.delete({
+      where: { dev_eui: String(dev_eui) },
+    });
+
+    if (!device || device.length === 0) {
+      return res.status(STATUS_CODES.NOT_FOUND).json({
+        statusCode: res.statusCode,
+        message: `Device not found`,
+      });
+    }
+
+    return res.status(STATUS_CODES.OK).json({
+      statusCode: res.statusCode,
+      data: device,
+    });
+  } catch (error) {
+    return res.status(STATUS_CODES.SERVER_ERROR).json({
+      statusCode: res.status,
+      message: error.message,
+    });
+  }
+};
+
+export { getDevice, getAllDevices, updateDeviceRoom, updateDeviceBlock, getDeviceLatestData, deleteDevice };

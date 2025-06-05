@@ -53,9 +53,23 @@ const AdminTableBody = ({ tableFields, updateTableData }) => {
                   </td>
                   <TableItem
                     item={
-                      !item.lastSeen || checkOfflineDate(item.lastSeen)
-                        ? 'Offline'
-                        : 'Online'
+                      <>
+                        <p>
+                          {!item.lastSeen || checkOfflineDate(item.lastSeen)
+                            ? 'Offline'
+                            : 'Online'}
+                        </p>
+                        <UpdateButton
+                          text="Edit"
+                          style="py-2 px-4 text-white bg-blue-500 rounded-lg"
+                          onClick={() => handleEditClick(() => 'edit', item)}
+                        />
+                        <UpdateButton
+                          text="Edit"
+                          style="py-2 px-4 text-white bg-red-500 rounded-lg"
+                          onClick={() => handleEditClick(() => 'delete', item)}
+                        />
+                      </>
                     }
                     className={
                       item.lastSeen
@@ -67,13 +81,7 @@ const AdminTableBody = ({ tableFields, updateTableData }) => {
                         : 'text-red-500'
                     }
                   />
-                  <td className="text-right pr-2 py-2 flex justify-end">
-                    <UpdateButton
-                      text="Edit"
-                      style="py-2 px-4 text-white bg-blue-500 rounded-lg"
-                      onClick={() => handleEditClick(() => 'edit', item)} // Pass the current item
-                    />
-                  </td>
+                  <td className="pr-2 py-2 flex justify-end space-x-2"></td>
                 </tr>
               );
             })}

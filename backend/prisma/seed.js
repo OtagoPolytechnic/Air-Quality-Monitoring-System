@@ -6,7 +6,6 @@ import sensorData from './data/seed/seedSensorData.json' assert { type: 'json' }
 
 
 import fs from 'fs/promises';
-
  
 
 const prisma = new PrismaClient();

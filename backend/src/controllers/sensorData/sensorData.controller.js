@@ -131,4 +131,35 @@ const getHistorySensorData = async (req, res) => {
   }
 };
 
-export { getRecentSensorData, getAllSensorDeviceData, getHistorySensorData };
+// Delete sensor data for a given device
+const deleteDeviceSensorData = async (req, res) => {
+  try {
+    const dev_eui = req.params.dev_eui;
+
+    const allSensorData = await prisma.sensorData.findMany({
+      where: { dev_eui: String(dev_eui) },
+    });
+
+    if (!allSensorData || allSensorData.length === 0) {
+      return res.status(STATUS_CODES.NOT_FOUND).json({
+        statusCode: res.statusCode,
+        message: 'No sensor data available',
+      });
+    }
+
+    await prisma.sensorData.deleteMany({
+      where: { dev_eui: String(dev_eui) },
+    });
+
+    return res.status(STATUS_CODES.OK).json({
+      statusCode: res.statusCode,
+    });
+  } catch (error) {
+    return res.status(STATUS_CODES.SERVER_ERROR).json({
+      statusCode: res.statusCode,
+      message: error.message,
+    });
+  }
+}
+
+export { getRecentSensorData, getAllSensorDeviceData, getHistorySensorData, deleteDeviceSensorData };

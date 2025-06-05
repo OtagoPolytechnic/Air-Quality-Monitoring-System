@@ -47,7 +47,7 @@ useEffect(() => {
         {isLoading ? (
           <LoadingSpinner />
         ) : devices ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-8 px-2 sm:px-4">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 mt-8 px-2 sm:px-4">
             {devices.map((device) => (
                 <NavLink
                 to={`/${blockName}/${device.room_number}`}

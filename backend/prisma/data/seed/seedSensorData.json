@@ -5,7 +5,8 @@
       "co2": "250",
       "temperature": "19",
       "deviceId": "eui-1000024b080301f5",
-      "dev_eui": "1000024b080301f5"
+      "dev_eui": "1000024b080301f5",
+      "createdAt": "2024-05-17T10:00:00Z"
     },
     {
       "id": 2,
@@ -76,6 +77,78 @@
       "temperature": "19.55",
       "deviceId": "eui-110009324b5456f5",
       "dev_eui": "110009324b5456f5"
+    },
+    {
+      "id": 12,
+      "co2": "500",
+      "temperature": "19.2",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5",
+      "createdAt": "2024-05-17T11:00:00Z"
+    },
+    {
+      "id": 13,
+      "co2": "800",
+      "temperature": "20",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5",
+      "createdAt": "2024-05-17T12:00:00Z"
+    },
+    {
+      "id": 14,
+      "co2": "1000",
+      "temperature": "20.5",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5",
+      "createdAt": "2024-05-17T13:00:00Z"
+    },
+    {
+      "id": 15,
+      "co2": "1300",
+      "temperature": "21",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5",
+      "createdAt": "2024-05-17T14:00:00Z"
+    },
+    {
+      "id": 16,
+      "co2": "1600",
+      "temperature": "21.3",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5",
+      "createdAt": "2024-05-17T15:00:00Z"
+    },
+    {
+      "id": 17,
+      "co2": "1400",
+      "temperature": "21",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5",
+      "createdAt": "2024-05-17T16:00:00Z"
+    },
+    {
+      "id": 18,
+      "co2": "1200",
+      "temperature": "20.7",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5",
+      "createdAt": "2024-05-17T17:00:00Z"
+    },
+    {
+      "id": 19,
+      "co2": "900",
+      "temperature": "20",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5",
+      "createdAt": "2024-05-17T18:00:00Z"
+    },
+    {
+      "id": 20,
+      "co2": "700",
+      "temperature": "19.5",
+      "deviceId": "eui-1000024b080301f5",
+      "dev_eui": "1000024b080301f5",
+      "createdAt": "2024-05-17T19:00:00Z"
     }
   ]
 }

@@ -9,9 +9,11 @@ export const useGetDeviceList = (apiKey) => {
     try {
       const response = await fetch(apiKey);
       const data = await response.json();
+
       if (data.statusCode == 404) {
         return setDevices([]);
       }
+      
       const mappedData = data.data.map((item) => {
         return {
           id: item.id,

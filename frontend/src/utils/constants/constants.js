@@ -27,7 +27,8 @@ export const tableHeaders = [
   { key: 'room_number', label: 'Room Number' },
   { key: 'blockName', label: 'Block Name' },
   { key: 'lastSeen', label: 'Last Seen' },
-  { key: 'status', label: 'Status' }
+  { key: 'status', label: 'Status' },
+  { key: 'buttons', label: null},
 ];
 
 export const tableHeadersUsers = [

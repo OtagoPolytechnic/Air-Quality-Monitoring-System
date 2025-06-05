@@ -47,7 +47,7 @@ useEffect(() => {
         {isLoading ? (
           <LoadingSpinner />
         ) : devices ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-8 px-2 sm:px-4">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 mt-8 px-2 sm:px-4">
             {devices.map((device) => (
                 <NavLink
                 to={`/${blockName}/${device.room_number}`}
@@ -70,12 +70,10 @@ useEffect(() => {
                         </div>
                       </div>
                       <div className="flex items-center justify-center ml-2">
-                        <div className="w-[120px] sm:w-[160px] md:w-[200px]">
                           <Co2Sensor
                             room_number={device.room_number}
                             co2={checkOfflineDate(device.createdAt) ? 0 : device.co2}
                           />
-                        </div>
                       </div>
                     </div>
                     <div className="flex flex-wrap sm:flex-nowrap overflow-x-auto gap-2 mt-4">

@@ -19,6 +19,7 @@ const AdminTable = () => {
   useEffect(() => {
     // Ensure the tableData is set correctly on initial load
     setTableData(initialData || []);
+    console.log(tableData)
   }, [initialData]);
 
   const updateTableData = (updatedItem) => {

@@ -2,16 +2,7 @@ import {useState, useEffect} from 'react';
 
 
 export const useGetDeviceList = (apiKey) => {
-    const [devices, setDevices] = useState([
-        {
-            id: '',
-            room_number: '',
-            deviceId: '',
-            dev_eui: '',
-            lastSeen: '',
-            blockName: '',
-        },
-    ]);
+    const [devices, setDevices] = useState([]);
     const [apiError, setApiError] = useState("");
     
     const fetchData = async () => {
@@ -22,11 +13,11 @@ export const useGetDeviceList = (apiKey) => {
             const mappedData = data.data.map((item) => {
                 return {
                     id: item.id,
-                    room_number: item.room_number ? item.room_number : "Unassigned",
+                    room_number: item.room_number, //? item.room_number : "Unassigned",
                     deviceId: item.deviceId,
                     dev_eui: item.dev_eui,
                     lastSeen: item.sensorData[0]?.createdAt || "",
-                    blockName: item.block ? item.block.blockName : "Unassigned",
+                    blockName: item.block?.blockName || "Unassigned",
                 };
             });
             setDevices(mappedData);

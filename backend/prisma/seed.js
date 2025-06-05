@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 
+
 import blocksData from './data/seed/seedBlocks.json' with { type: 'json' };
 import devicesData from './data/seed/seedDevices.json' with { type: 'json' };
 import sensorData from './data/seed/seedSensorData.json' with { type: 'json' };
@@ -7,7 +8,7 @@ import sensorData from './data/seed/seedSensorData.json' with { type: 'json' };
 
 import fs from 'fs/promises';
 
- 
+
 
 const prisma = new PrismaClient();
 

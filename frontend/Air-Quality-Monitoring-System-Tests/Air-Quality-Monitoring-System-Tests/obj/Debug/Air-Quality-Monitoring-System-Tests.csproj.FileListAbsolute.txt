@@ -1,0 +1,164 @@
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\selenium-manager\linux\selenium-manager
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\selenium-manager\macos\selenium-manager
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\selenium-manager\windows\selenium-manager.exe
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Air-Quality-Monitoring-System-Tests.dll.config
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Air-Quality-Monitoring-System-Tests.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Air-Quality-Monitoring-System-Tests.pdb
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Buffers.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Memory.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Json.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.ValueTuple.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.Support.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Buffers.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Memory.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Json.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.ValueTuple.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.Support.xml
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.csproj.AssemblyReference.cache
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.csproj.CoreCompileInputs.cache
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Qual.3124330F.Up2Date
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.dll
+C:\Users\cosgbf1\source\repos\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.pdb
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.csproj.AssemblyReference.cache
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.csproj.CoreCompileInputs.cache
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.pdb
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\selenium-manager\linux\selenium-manager
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\selenium-manager\macos\selenium-manager
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\selenium-manager\windows\selenium-manager.exe
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Air-Quality-Monitoring-System-Tests.dll.config
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Air-Quality-Monitoring-System-Tests.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Air-Quality-Monitoring-System-Tests.pdb
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Buffers.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Memory.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Json.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.ValueTuple.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.Support.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Buffers.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Memory.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Json.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.ValueTuple.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.Support.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Qual.3124330F.Up2Date
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\selenium-manager\linux\selenium-manager
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\selenium-manager\macos\selenium-manager
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\selenium-manager\windows\selenium-manager.exe
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Air-Quality-Monitoring-System-Tests.dll.config
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Air-Quality-Monitoring-System-Tests.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Air-Quality-Monitoring-System-Tests.pdb
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Buffers.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Memory.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Json.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.ValueTuple.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.Support.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Buffers.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Memory.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Json.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.ValueTuple.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.Support.xml
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.csproj.AssemblyReference.cache
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.csproj.CoreCompileInputs.cache
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Qual.3124330F.Up2Date
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.dll
+C:\Users\cosgbf1\OneDrive - Otago Polytechnic\BIT S1 2025\Studio\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.pdb
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\selenium-manager\linux\selenium-manager
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\selenium-manager\macos\selenium-manager
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\selenium-manager\windows\selenium-manager.exe
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Air-Quality-Monitoring-System-Tests.dll.config
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Air-Quality-Monitoring-System-Tests.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Air-Quality-Monitoring-System-Tests.pdb
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Buffers.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Memory.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Json.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.ValueTuple.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.Support.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Buffers.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Memory.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Text.Json.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\System.ValueTuple.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\bin\Debug\WebDriver.Support.xml
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.csproj.AssemblyReference.cache
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.csproj.CoreCompileInputs.cache
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Qual.3124330F.Up2Date
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.dll
+C:\Users\ettac\Desktop\Air-Quality-Monitoring-System\frontend\Air-Quality-Monitoring-System-Tests\Air-Quality-Monitoring-System-Tests\obj\Debug\Air-Quality-Monitoring-System-Tests.pdb

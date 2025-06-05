@@ -9,7 +9,7 @@ const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
 
 const AdminTable = () => {
   const { devices: initialData, apiError } = useGetDeviceList(
-    `${apiKey}/api/v1/devices?amount=10000`
+    `${apiKey}/api/v1/devices`
   );
 
   // Sort based on tableData, which will include updated data
@@ -19,6 +19,7 @@ const AdminTable = () => {
   useEffect(() => {
     // Ensure the tableData is set correctly on initial load
     setTableData(initialData || []);
+    console.log(tableData)
   }, [initialData]);
 
   const updateTableData = (updatedItem) => {

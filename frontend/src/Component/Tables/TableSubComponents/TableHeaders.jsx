@@ -9,19 +9,23 @@ const TableHeaders = ({ headers, onSort, sortConfig }) => {
             className="py-3 px-2 sm:text-clip cursor-pointer"
             onClick={() => onSort(header.key)}
           >
-            {header.label}
-            <span className="ml-1">
-              <span
-                className={`text-green-500 ${sortConfig.key === header.key && sortConfig.direction === 'asc' ? '' : 'opacity-50'}`}
-              >
-                ▲
-              </span>
-              <span
-                className={`text-red-500 ${sortConfig.key === header.key && sortConfig.direction === 'desc' ? '' : 'opacity-50'}`}
-              >
-                ▼
-              </span>
-            </span>
+            {header.label && (
+              <>
+                {header.label}
+                <span className="ml-1">
+                  <span
+                    className={`text-green-500 ${sortConfig.key === header.key && sortConfig.direction === 'asc' ? '' : 'opacity-50'}`}
+                  >
+                    ▲
+                  </span>
+                  <span
+                    className={`text-red-500 ${sortConfig.key === header.key && sortConfig.direction === 'desc' ? '' : 'opacity-50'}`}
+                  >
+                    ▼
+                  </span>
+                </span>
+              </>
+            )}
           </th>
         ))}
       </tr>

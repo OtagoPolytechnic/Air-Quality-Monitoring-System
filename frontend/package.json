@@ -49,7 +49,6 @@
     "babel-plugin-transform-import-meta": "^2.2.1",
     "babel-plugin-transform-vite-meta-env": "^1.0.3",
     "commitizen": "^4.3.0",
-    "cypress": "^13.10.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2",

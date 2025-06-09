@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "css": "^3.0.0",
-    "cypress-dotenv": "^2.0.0",
     "dotenv": "^16.4.5",
     "firebase": "^10.13.0",
     "jest-websocket-mock": "^2.5.0",

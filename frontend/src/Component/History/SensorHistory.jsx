@@ -104,7 +104,7 @@ export const SensorHistory = ({ dev_eui }) => {
             <YAxis yAxisId="left" type="number" domain={[0, 3000]} />
             <Tooltip data-testid="tooltip" content={<CustomTooltip />} />
             <Legend />
-            <Line yAxisId="left" dataKey="co2" fill="#8884d8" />
+            <Line yAxisId="left" dataKey="co2" fill="#8884d8" dot={false} />
           </LineChart> 
         </ResponsiveContainer>  
         <ErrorMessage data-cy="errormessage" />

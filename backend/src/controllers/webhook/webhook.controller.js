@@ -49,6 +49,18 @@ export const handleWebhook = async (req, res) => {
       },
     });
 
+    await prisma.device.update({
+      where: { deviceId: payload.end_device_ids.device_id },
+      data: {
+        updatedAt: new Date(),
+        sensorData: {
+          connect: {
+            sensorData
+          },
+        },
+      },
+    });
+
     // Emit the data to the websocket
     emitter.emit('webhook', { message: 'New data received', timestamp: Date.now() });
     console.log('Data emitted to websocket', sensorData);

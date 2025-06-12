@@ -17,7 +17,7 @@ model Block {
 
 model Device {
   id          Int          @id @default(autoincrement())
-  room_number String?      @unique
+  room_number String       @default("Unassigned")
   deviceId    String       @unique
   dev_eui     String       @unique
   createdAt   DateTime     @default(now())

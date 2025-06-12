@@ -1,4 +1,3 @@
-import { Homepage } from "../Component/Pages/Homepage";
 import { RoomPage } from "../Component/Pages/Roompage";
 import Settings from "../Component/Pages/Settings";
 import { routerLabels } from "../utils/router/routerLabels";
@@ -9,57 +8,50 @@ import Blocks from "../Component/Pages/Blocks";
 import Users from "../Component/Pages/Users";
 import Logout from "../Component/Auth/Logout";
 import BlockPage from "../Component/Pages/BlockPage";
+import ProtectedRoute from "./protectedRoute"; 
+import { Navigate } from 'react-router-dom';
 
 export const routes = [
     {
-        path: "/",
-        label: routerLabels.home,
-        element: <Homepage/>
+      path: '/',
+      element: <Navigate to="/D-Block" replace />
     },
     {
         path: "/:blockName/:roomNumber",
         label: routerLabels.block,
-        element: <RoomPage/>
+        element: <RoomPage />
     },
     {
         path: "/:blockName",
         label: routerLabels.blockName,
-        element: <BlockPage/>
+        element: <BlockPage />
     },
     {
         path: "/login",
         label: routerLabels.login,
-        element: <LoginPage/>
-    },
-    {
-        path: "/admin",
-        label: routerLabels.admin,
-        element: <Admin/>
-    },
-    {
-        path: "/admin/blocks",
-        label: routerLabels.blocks,
-        element: <Blocks/>
-    },
-    {
-        path: "/admin/users",
-        label: routerLabels.users,
-        element: <Users/>
-    },
-    {
-        path: "/admin/devices",
-        label: routerLabels.devices,
-        element: <Devices/>
-    },
-    {
-        path:"/settings",
-        label: routerLabels.settings,
-        element: <Settings/>
+        element: <LoginPage />
     },
     {
         path: "/logout",
         label: routerLabels.logout,
-        element: <Logout/>
+        element: <Logout />
+    },
+    {
+        path: "/settings",
+        label: routerLabels.settings,
+        element: <Settings />
+    },
+
+    // Admin Routes (Protected)
+    {
+        path: "/admin",
+        label: routerLabels.admin,
+        element: <ProtectedRoute adminOnly={true} />,
+        children: [
+            { path: "/admin", element: <Admin /> },
+            { path: "/admin/blocks", element: <Blocks /> },
+            { path: "/admin/users", element: <Users /> },
+            { path: "/admin/devices", element: <Devices /> }
+        ]
     }
-    
-]
+];

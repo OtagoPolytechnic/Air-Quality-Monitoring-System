@@ -3,22 +3,22 @@
     {
       "id": 1,
       "blockName": "D-Block",
-      "deviceId": "eui-1000024b080301f5"
+      "device": ["eui-1000024b080301f5"]
     },
     {
       "id": 2,
       "blockName": "C-Block",
-      "deviceId": "eui-2000024b080301f5"
+      "device": ["eui-800002836924b1f5", "eui-110009324b5456f5"]
     },
     {
       "id": 3,
       "blockName": "B-Block",
-      "deviceId": "eui-4000024b080301f5"
+      "device": ["eui-900064b450070f5"]
     },
     {
       "id": 4,
       "blockName": "A-Block",
-      "deviceId": "eui-5000024b080301f5"
+      "device": ["eui-100009452b3547f5"]
     }
   ]
 }

@@ -6,10 +6,10 @@ const prisma = new PrismaClient();
 // webhook will get the payload from the co2 sensors and return the data along with the statuscode and message
 export const handleWebhook = async (req, res) => {
   try {
-    console.log('=== Webhook handler started ===');
+    // console.log('=== Webhook handler started ===');
     const payload = req.body;
     // Remove later
-    console.log('Received payload:', payload);
+    // console.log('Received payload:', payload);
 
     if (!payload || Object.keys(payload).length === 0) {
       console.log('ERROR: Empty payload received');
@@ -19,7 +19,7 @@ export const handleWebhook = async (req, res) => {
       });
     }
 
-    console.log('Checking for device ID:', payload.end_device_ids?.device_id);
+    // console.log('Checking for device ID:', payload.end_device_ids?.device_id);
     // Call the db and check if the device already exists
     const checkDeviceId = await prisma.device.findUnique({
       where: { deviceId: payload.end_device_ids.device_id },
@@ -58,7 +58,7 @@ export const handleWebhook = async (req, res) => {
         temperature: value2,
       },
     });
-    console.log('Sensor data created in database:', sensorData);
+    // console.log('Sensor data created in database:', sensorData);
 
 /*     await prisma.device.update({
       where: { deviceId: payload.end_device_ids.device_id },
@@ -74,8 +74,8 @@ export const handleWebhook = async (req, res) => {
 
     // Emit the data to the websocket
     emitter.emit('webhook', { message: 'New data received', timestamp: Date.now() });
-    console.log('Data emitted to websocket', sensorData);
-    console.log('=== Webhook handler completed successfully ===');
+    // console.log('Data emitted to websocket', sensorData);
+    // console.log('=== Webhook handler completed successfully ===');
 
     return res.status(STATUS_CODES.OK).json({
       statusCode: res.statusCode,
